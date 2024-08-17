@@ -1,6 +1,6 @@
 # Reporter
 
-[Project Demo](https://next-pet-breed-explorer.vercel.app/)
+[Project Demo](https://next-reporter.vercel.app/)
 
 ## Installation Steps
 
