@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import ThemeController from '@/src/components/elements/ThemeController/ThemeController';
+import { ThemeController } from '@/src/components/elements';
 import { Badge, BtnLink, Subtitle, Text, Title } from '@/src/components/ui';
 
 export const metadata: Metadata = {

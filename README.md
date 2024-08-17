@@ -1,6 +1,6 @@
 # Reporter
 
-This is **Next Template** for development. Technolgies used: **React, TypeScript, Tailwind CSS, Axios, React Query, React Hook Form, Yup, Lodash Debounce, Redux Toolkit, Zustand.**
+[Project Demo](https://next-pet-breed-explorer.vercel.app/)
 
 ## Installation Steps
 
@@ -15,13 +15,13 @@ This is **Next Template** for development. Technolgies used: **React, TypeScript
     -   pages
 -   src
     -   components
+        -   blocks
         -   elements
         -   root
         -   ui
     -   helpers
     -   services
-    -   storeRedux
-    -   storeZustand
     -   types
         -   enums
         -   interfaces
+    -   variables
