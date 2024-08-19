@@ -12,8 +12,6 @@ const news = {
     image: 'https://d.newsweek.com/en/full/2450666/breaking-news.jpg',
     publish_date: '2024-08-15 13:58:38',
     authors: ['Alex Stone', 'Meredith Deliso', 'Alexander Mallin', 'Vue Noda', 'Dima Rogkov'],
-    language: 'en',
-    source_country: 'us',
 };
 
 const HomePage = () => {

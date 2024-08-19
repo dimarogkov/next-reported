@@ -1,8 +1,9 @@
 import AuthorAvatar from './AuthorAvatar';
 import AuthorInfo from './AuthorInfo';
 import DateInfo from './DateInfo';
+import Logo from './Logo';
 import NewsCardContent from './NewsCardContent';
 import NewsCardImg from './NewsCardImg';
-import ThemeController from './ThemeController';
+import Socials from './Socials';
 
-export { AuthorAvatar, AuthorInfo, DateInfo, NewsCardContent, NewsCardImg, ThemeController };
+export { AuthorAvatar, AuthorInfo, DateInfo, Logo, NewsCardContent, NewsCardImg, Socials };

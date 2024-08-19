@@ -17,7 +17,7 @@ const BtnLink: React.FC<Props> = forwardRef<HTMLAnchorElement, Props>(
             {...props}
             href={href}
             className={cn(
-                `flex items-center justify-center gap-1 w-full sm:w-fit sm:min-w-32 h-10 lg:h-11 font-media px-4 rounded text-white transition-opacity duration-300 hover:opacity-80 ${className}`,
+                `flex items-center justify-center gap-1 w-full sm:w-fit sm:min-w-32 h-10 lg:h-11 px-4 rounded text-white transition-opacity duration-300 hover:opacity-80 ${className}`,
                 {
                     'bg-red': btnType === EnumBtn.default || btnType === EnumBtn.withIcon,
                     'bg-black': btnType === EnumBtn.dark || btnType === EnumBtn.darkWithIcon,
