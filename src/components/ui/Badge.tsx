@@ -1,6 +1,6 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes, RefAttributes, forwardRef } from 'react';
 
-interface Props extends HTMLAttributes<HTMLSpanElement> {
+interface Props extends HTMLAttributes<HTMLSpanElement>, RefAttributes<HTMLSpanElement> {
     className?: string;
 }
 

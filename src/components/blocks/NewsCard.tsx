@@ -1,8 +1,11 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { EnumCard } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
 
-import { AuthorInfo, DateInfo, NewsCardContent, NewsCardImg } from '../elements';
+import { NewsCardContent, NewsCardImg } from '../elements/NewsCard';
+import { AuthorInfo } from '../elements/Author';
+import { DateInfo } from '../elements';
 import cn from 'classnames';
 
 type Props = {
@@ -13,11 +16,16 @@ type Props = {
 };
 
 const NewsCard: React.FC<Props> = ({ news, isLoading = false, cardType = EnumCard.default, className = '' }) => {
+    const router = useRouter();
+
     const { id, image, title, summary, authors, publish_date } = news;
+
+    const navigateTo = () => router.push(`/${id}`);
 
     return (
         <div
-            className={cn(`relative group ${className}`, {
+            onClick={navigateTo}
+            className={cn(`relative cursor-pointer group ${className}`, {
                 'flex flex-wrap flex-row-reverse items-center justify-between w-full': cardType === EnumCard.small,
                 'w-full block': cardType !== EnumCard.small,
             })}

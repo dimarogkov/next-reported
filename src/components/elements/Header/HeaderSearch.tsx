@@ -1,9 +1,10 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { EnumBtn } from '@/src/types/enums';
+
 import { Btn, Input, Label } from '../../ui';
 import { Search } from 'lucide-react';
 import cn from 'classnames';
-import { useRouter } from 'next/navigation';
 
 type Props = {
     isSearchOpen: boolean;

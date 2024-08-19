@@ -1,6 +1,6 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes, RefAttributes, forwardRef } from 'react';
 
-interface Props extends HTMLAttributes<HTMLHeadingElement> {
+interface Props extends HTMLAttributes<HTMLHeadingElement>, RefAttributes<HTMLHeadingElement> {
     className?: string;
 }
 

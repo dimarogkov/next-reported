@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import AuthorAvatar from './AuthorAvatar';
 import { EnumText } from '@/src/types/enums';
-import { Text } from '../ui';
+import { Text } from '../../ui';
 
 type Props = {
     authors: string[];

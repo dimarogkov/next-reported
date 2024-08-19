@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { getAvatar } from '@/src/services/avatar';
 import { useQuery } from '@tanstack/react-query';
-import { Skeleton } from '../ui';
+import { Skeleton } from '../../ui';
 
 type Props = {
     author: string;

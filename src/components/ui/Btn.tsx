@@ -1,9 +1,9 @@
-import { ButtonHTMLAttributes, forwardRef } from 'react';
+import { ButtonHTMLAttributes, forwardRef, RefAttributes } from 'react';
 import { EnumBtn } from '@/src/types/enums/Btn';
 import { ArrowUpRight } from 'lucide-react';
 import cn from 'classnames';
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement>, RefAttributes<HTMLButtonElement> {
     btnType?: string;
     className?: string;
 }

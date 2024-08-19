@@ -1,6 +1,6 @@
-import { LabelHTMLAttributes, forwardRef } from 'react';
+import { LabelHTMLAttributes, RefAttributes, forwardRef } from 'react';
 
-interface Props extends LabelHTMLAttributes<HTMLLabelElement> {
+interface Props extends LabelHTMLAttributes<HTMLLabelElement>, RefAttributes<HTMLLabelElement> {
     className?: string;
 }
 

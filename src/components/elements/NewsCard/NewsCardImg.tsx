@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { EnumCard } from '@/src/types/enums';
-import { Skeleton } from '../ui';
+import { Skeleton } from '../../ui';
 import cn from 'classnames';
 
 type Props = {

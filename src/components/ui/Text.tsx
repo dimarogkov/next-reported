@@ -1,8 +1,8 @@
-import { HTMLAttributes, forwardRef } from 'react';
+import { HTMLAttributes, RefAttributes, forwardRef } from 'react';
 import { EnumText } from '@/src/types/enums/Text';
 import cn from 'classnames';
 
-interface Props extends HTMLAttributes<HTMLParagraphElement> {
+interface Props extends HTMLAttributes<HTMLParagraphElement>, RefAttributes<HTMLParagraphElement> {
     textSize?: string;
     className?: string;
 }

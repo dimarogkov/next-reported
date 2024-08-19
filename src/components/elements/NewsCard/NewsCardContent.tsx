@@ -1,6 +1,6 @@
 import { EnumCard, EnumText } from '@/src/types/enums';
-import DateInfo from './DateInfo';
-import { Subtitle, Text } from '../ui';
+import DateInfo from '../DateInfo';
+import { Subtitle, Text } from '../../ui';
 
 type Props = {
     type: string;
