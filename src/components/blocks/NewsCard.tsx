@@ -20,7 +20,7 @@ const NewsCard: React.FC<Props> = ({ news, isLoading = false, cardType = EnumCar
 
     const { id, image, title, summary, authors, publish_date } = news;
 
-    const navigateTo = () => router.push(`/${id}`);
+    const navigateTo = () => router.push(`/news/${id}`);
 
     return (
         <div
