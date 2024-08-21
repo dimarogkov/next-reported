@@ -9,7 +9,7 @@ const Root: React.FC<Props> = ({ children }) => {
         <html lang='en' suppressHydrationWarning>
             <body className='relative flex flex-col w-full min-h-screen'>
                 <Header />
-                <main className='relative flex-grow w-full max-w-screen-2xl p-4 sm:p-5 m-auto'>{children}</main>
+                <main className='relative flex-grow w-full max-w-screen-2xl px-4 sm:px-5 m-auto'>{children}</main>
                 <Footer />
             </body>
         </html>

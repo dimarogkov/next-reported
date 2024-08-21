@@ -1,5 +1,5 @@
 import { EnumBtn, EnumCard, EnumText } from '@/src/types/enums';
-import { NewsCard } from '@/src/components/blocks';
+import { NewsCard, Subscribe } from '@/src/components/blocks';
 import { Badge, Btn, Subtitle, Text, Title } from '@/src/components/ui';
 
 const news = {
@@ -16,8 +16,8 @@ const news = {
 
 const HomePage = () => {
     return (
-        <section className='relative w-full'>
-            <div className='w-full mb-5 last:mb-0'>
+        <>
+            <section className='relative w-full mb-16'>
                 <div className='flex gap-2 mb-5 last:mb-0'>
                     <Badge>Redux Store</Badge>
                     <Badge>Zustand Store</Badge>
@@ -51,13 +51,15 @@ const HomePage = () => {
                     <Btn btnType={EnumBtn.darkWithIcon}>Subscribe</Btn>
                 </div>
 
-                <div className='w-full md:w-[50%]'>
+                {/* <div className='w-full md:w-[50%]'>
                     <NewsCard news={news} cardType={EnumCard.large} className='mb-5 last:mb-0' />
                     <NewsCard news={news} className='mb-5 last:mb-0' />
                     <NewsCard news={news} cardType={EnumCard.small} />
-                </div>
-            </div>
-        </section>
+                </div> */}
+            </section>
+
+            <Subscribe className='mb-16' />
+        </>
     );
 };
 
