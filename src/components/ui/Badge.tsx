@@ -5,7 +5,7 @@ interface Props extends HTMLAttributes<HTMLSpanElement>, RefAttributes<HTMLSpanE
 }
 
 const Badge: React.FC<Props> = forwardRef<HTMLSpanElement, Props>(({ className = '', ...props }, ref) => (
-    <span ref={ref} {...props} className={`text-sm px-3 py-1.5 rounded bg-red text-white ${className}`} />
+    <span ref={ref} {...props} className={`relative text-sm px-3 py-1.5 rounded bg-red text-white ${className}`} />
 ));
 
 Badge.displayName = 'Badge';

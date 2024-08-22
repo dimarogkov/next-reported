@@ -12,7 +12,7 @@ const Text: React.FC<Props> = forwardRef<HTMLParagraphElement, Props>(
         <p
             ref={ref}
             {...props}
-            className={cn(`${className}`, {
+            className={cn(`relative ${className}`, {
                 'text-base md:text-lg': textSize === EnumText.large,
                 'text-base': textSize === EnumText.default,
                 'text-sm': textSize === EnumText.small,
