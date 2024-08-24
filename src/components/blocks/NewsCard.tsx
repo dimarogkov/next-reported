@@ -12,10 +12,10 @@ type Props = {
     news: INews;
     cardType?: string;
     className?: string;
-    isLoading?: boolean;
+    isLoading: boolean;
 };
 
-const NewsCard: React.FC<Props> = ({ news, isLoading = false, cardType = EnumCard.default, className = '' }) => {
+const NewsCard: React.FC<Props> = ({ news, isLoading, cardType = EnumCard.default, className = '' }) => {
     const router = useRouter();
 
     const { id, image, title, summary, authors, publish_date } = news;
@@ -26,15 +26,17 @@ const NewsCard: React.FC<Props> = ({ news, isLoading = false, cardType = EnumCar
         <div
             onClick={navigateTo}
             className={cn(`relative cursor-pointer group ${className}`, {
-                'flex flex-wrap flex-row-reverse items-center justify-between w-full': cardType === EnumCard.small,
-                'w-full block': cardType !== EnumCard.small,
+                'lg:flex lg:flex-col w-full': cardType === EnumCard.large,
+                'lg:flex lg:items-center lg:justify-between w-full': cardType === EnumCard.small,
+                'w-full block': cardType === EnumCard.default,
             })}
         >
             <NewsCardImg type={cardType} src={image} alt={title} isLoading={isLoading} />
 
             <div
                 className={cn('w-full', {
-                    'sm:w-[66%]': cardType === EnumCard.small,
+                    'flex flex-col flex-grow': cardType === EnumCard.large,
+                    'lg:w-[57%]': cardType === EnumCard.small,
                 })}
             >
                 <NewsCardContent
@@ -42,7 +44,7 @@ const NewsCard: React.FC<Props> = ({ news, isLoading = false, cardType = EnumCar
                     title={title}
                     summary={summary}
                     date={publish_date}
-                    className='mb-6 last:mb-0'
+                    className='mb-5 last:mb-0'
                 />
 
                 {cardType === EnumCard.large && (

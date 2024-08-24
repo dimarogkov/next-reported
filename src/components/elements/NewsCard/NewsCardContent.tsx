@@ -1,6 +1,7 @@
 import { EnumCard, EnumText } from '@/src/types/enums';
 import DateInfo from '../DateInfo';
 import { Subtitle, Text } from '../../ui';
+import cn from 'classnames';
 
 type Props = {
     type: string;
@@ -12,8 +13,12 @@ type Props = {
 
 const NewsCardContent: React.FC<Props> = ({ type, title, summary, date, className = '' }) => {
     return (
-        <div className={`w-full ${className}`}>
-            {type === EnumCard.default && (
+        <div
+            className={cn(`w-full ${className}`, {
+                'flex-grow': type === EnumCard.large,
+            })}
+        >
+            {(type === EnumCard.default || type === EnumCard.small) && (
                 <>
                     <DateInfo date={date} className='mb-3 last:mb-0' />
 
@@ -25,12 +30,10 @@ const NewsCardContent: React.FC<Props> = ({ type, title, summary, date, classNam
 
             {type === EnumCard.large && (
                 <>
-                    <Subtitle className=' group-hover:underline mb-4 last:mb-0'>{title}</Subtitle>
+                    <Subtitle className=' group-hover:underline mb-3 last:mb-0'>{title}</Subtitle>
                     <Text textSize={EnumText.large}>{summary}</Text>
                 </>
             )}
-
-            {type === EnumCard.small && <Text className='font-medium group-hover:underline'>{title}</Text>}
         </div>
     );
 };

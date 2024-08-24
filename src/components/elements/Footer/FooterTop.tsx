@@ -1,6 +1,5 @@
 import Link from 'next/link';
-import { EnumLogo } from '@/src/types/enums/Logo';
-import { EnumSocials } from '@/src/types/enums/Socials';
+import { EnumLogo, EnumSocials } from '@/src/types/enums';
 import { menu } from '@/src/variables/menu';
 
 import Logo from '../Logo';

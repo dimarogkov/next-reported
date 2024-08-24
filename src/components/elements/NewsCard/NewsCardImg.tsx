@@ -14,11 +14,14 @@ type Props = {
 const NewsCardImg: React.FC<Props> = ({ type, src, alt, isLoading, className = '' }) => {
     return (
         <div
-            className={cn(`relative w-full h-0 pb-[65%] rounded-lg overflow-hidden bg-gray last:mb-0 ${className}`, {
-                'sm:w-[32%] sm:pb-[32%] mb-4 sm:mb-0': type === EnumCard.small,
-                'mb-6': type === EnumCard.large,
-                'mb-4': type === EnumCard.default,
-            })}
+            className={cn(
+                `relative w-full h-0 pb-[65%] rounded-lg overflow-hidden border border-gray bg-gray last:mb-0 ${className}`,
+                {
+                    'lg:w-[40%] lg:pb-[32%] mb-4 lg:mb-0': type === EnumCard.small,
+                    'mb-5': type === EnumCard.large,
+                    'mb-4': type === EnumCard.default,
+                }
+            )}
         >
             {isLoading && <Skeleton />}
 

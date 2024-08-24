@@ -1,7 +1,8 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
-import { getHeroNews } from '@/src/services/news';
+import { getNewsByCategory } from '@/src/services/news';
 import { HeroContent, HeroImg } from '../elements/Hero';
+import { EnumCategoriesNews } from '@/src/types/enums';
 
 type Props = {
     className?: string;
@@ -9,8 +10,8 @@ type Props = {
 
 const Hero: React.FC<Props> = ({ className = '' }) => {
     const { data: news, isLoading } = useQuery({
-        queryFn: () => getHeroNews(),
-        select: (data) => data.data.news[0],
+        queryFn: () => getNewsByCategory(EnumCategoriesNews.politics),
+        select: (data) => data.data[1],
         queryKey: ['hero news'],
         refetchOnWindowFocus: false,
     });

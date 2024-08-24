@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { EnumLogo } from '@/src/types/enums/Logo';
+import { EnumLogo } from '@/src/types/enums';
 import { PROJECT_NAME } from '@/src/variables';
 import { Newspaper } from 'lucide-react';
 import cn from 'classnames';

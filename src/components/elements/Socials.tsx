@@ -1,6 +1,6 @@
-import { EnumSocials } from '@/src/types/enums/Socials';
-import { socials } from '@/src/variables/socials';
 import Link from 'next/link';
+import { EnumSocials } from '@/src/types/enums';
+import { socials } from '@/src/variables/socials';
 import cn from 'classnames';
 
 type Props = {

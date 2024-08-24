@@ -13,7 +13,7 @@ const HeroContent: React.FC<Props> = ({ news, className = '' }) => {
             {news ? (
                 <>
                     <div className='flex mb-3 md:mb-4 last:mb-0'>
-                        <Badge>{`${news.catgory.charAt(0).toUpperCase()}${news.catgory.slice(1)}`}</Badge>
+                        <Badge>{`${news.category.charAt(0).toUpperCase()}${news.category.slice(1)}`}</Badge>
                     </div>
 
                     <Title className='mb-3 last:mb-0'>{news.title}</Title>
