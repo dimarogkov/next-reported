@@ -14,7 +14,7 @@ const HeroImg: React.FC<Props> = ({ src, alt, isLoading, className = '' }) => {
 
     return (
         <div
-            className={`relative w-full h-0 pb-[65%] sm:pb-[60%] md:pb-[35%] rounded-md overflow-hidden bg-gray ${className}`}
+            className={`relative w-full h-0 pb-[65%] sm:pb-[60%] lg:pb-[35%] rounded-md overflow-hidden bg-gray ${className}`}
         >
             {isLoading && <Skeleton />}
 

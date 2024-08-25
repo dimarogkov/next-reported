@@ -1,6 +1,7 @@
 import { EnumBtn } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
-import { Badge, BtnLink, Skeleton, Text, Title } from '../../ui';
+import HeroSkeleton from './HeroSkeleton';
+import { Badge, BtnLink, Text, Title } from '../../ui';
 
 type Props = {
     news: INews | undefined;
@@ -24,20 +25,7 @@ const HeroContent: React.FC<Props> = ({ news, className = '' }) => {
                     </BtnLink>
                 </>
             ) : (
-                <>
-                    <div className='relative w-20 h-7 md:h-8 mb-3 last:mb-0'>
-                        <Skeleton />
-                    </div>
-                    <div className='relative w-[75%] md:w-[65%] h-10 xl:h-12 mb-3 last:mb-0'>
-                        <Skeleton />
-                    </div>
-                    <div className='relative w-full h-20 md:h-24 mb-3 last:mb-0'>
-                        <Skeleton />
-                    </div>
-                    <div className='relative w-32 h-10 lg:h-11'>
-                        <Skeleton />
-                    </div>
-                </>
+                <HeroSkeleton />
             )}
         </div>
     );

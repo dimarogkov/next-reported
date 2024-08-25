@@ -18,7 +18,7 @@ const Hero: React.FC<Props> = ({ className = '' }) => {
 
     return (
         <section
-            className={`relative flex-col-reverse md:flex-row flex items-center gap-5 md:gap-8 lg:gap-10 w-full ${className}`}
+            className={`relative flex-col-reverse lg:flex-row flex items-center gap-5 md:gap-8 lg:gap-10 w-full ${className}`}
         >
             <HeroContent news={news} />
             <HeroImg src={news?.image} alt={news?.title} isLoading={isLoading} />

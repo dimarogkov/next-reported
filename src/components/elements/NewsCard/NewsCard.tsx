@@ -3,19 +3,19 @@ import { useRouter } from 'next/navigation';
 import { EnumCard } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
 
-import { NewsCardContent, NewsCardImg } from '../elements/NewsCard';
-import { AuthorInfo } from '../elements/Author';
-import { DateInfo } from '../elements';
+import NewsCardImg from './NewsCardImg';
+import NewsCardContent from './NewsCardContent';
+import { AuthorInfo } from '../Author';
+import DateInfo from '../DateInfo';
 import cn from 'classnames';
 
 type Props = {
     news: INews;
     cardType?: string;
     className?: string;
-    isLoading: boolean;
 };
 
-const NewsCard: React.FC<Props> = ({ news, isLoading, cardType = EnumCard.default, className = '' }) => {
+const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, className = '' }) => {
     const router = useRouter();
 
     const { id, image, title, summary, authors, publish_date } = news;
@@ -31,7 +31,7 @@ const NewsCard: React.FC<Props> = ({ news, isLoading, cardType = EnumCard.defaul
                 'w-full block': cardType === EnumCard.default,
             })}
         >
-            <NewsCardImg type={cardType} src={image} alt={title} isLoading={isLoading} />
+            <NewsCardImg type={cardType} src={image} alt={title} />
 
             <div
                 className={cn('w-full', {
@@ -44,7 +44,7 @@ const NewsCard: React.FC<Props> = ({ news, isLoading, cardType = EnumCard.defaul
                     title={title}
                     summary={summary}
                     date={publish_date}
-                    className='mb-5 last:mb-0'
+                    className='mb-4 sm:mb-5 last:mb-0'
                 />
 
                 {cardType === EnumCard.large && (

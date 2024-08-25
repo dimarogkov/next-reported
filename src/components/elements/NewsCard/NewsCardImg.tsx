@@ -1,17 +1,15 @@
 import Image from 'next/image';
 import { EnumCard } from '@/src/types/enums';
-import { Skeleton } from '../../ui';
 import cn from 'classnames';
 
 type Props = {
     type: string;
     src: string;
     alt: string;
-    isLoading: boolean;
     className?: string;
 };
 
-const NewsCardImg: React.FC<Props> = ({ type, src, alt, isLoading, className = '' }) => {
+const NewsCardImg: React.FC<Props> = ({ type, src, alt, className = '' }) => {
     return (
         <div
             className={cn(
@@ -23,16 +21,12 @@ const NewsCardImg: React.FC<Props> = ({ type, src, alt, isLoading, className = '
                 }
             )}
         >
-            {isLoading && <Skeleton />}
-
-            {src && (
-                <Image
-                    src={src}
-                    alt={alt}
-                    className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-transform duration-500 group-hover:scale-110'
-                    fill
-                />
-            )}
+            <Image
+                src={src}
+                alt={alt}
+                className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-transform duration-500 group-hover:scale-110'
+                fill
+            />
         </div>
     );
 };

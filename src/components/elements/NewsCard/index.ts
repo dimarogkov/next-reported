@@ -1,4 +1,6 @@
+import NewsCard from './NewsCard';
 import NewsCardContent from './NewsCardContent';
 import NewsCardImg from './NewsCardImg';
+import NewsCardSkeleton from './NewsCardSkeleton';
 
-export { NewsCardContent, NewsCardImg };
+export { NewsCard, NewsCardContent, NewsCardImg, NewsCardSkeleton };
