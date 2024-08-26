@@ -1,10 +1,10 @@
 'use client';
 import { useQuery } from '@tanstack/react-query';
 import { getNewsByCategory } from '@/src/services/news';
-import { EnumCard, EnumPopularNews } from '@/src/types/enums';
+import { EnumBtn, EnumCard, EnumPopularNews } from '@/src/types/enums';
 
 import { NewsCard, NewsCardSkeleton } from '../elements/NewsCard';
-import { Subtitle } from '../ui';
+import { BtnLink, Subtitle } from '../ui';
 import cn from 'classnames';
 
 type Props = {
@@ -30,7 +30,15 @@ const PopularNews: React.FC<Props> = ({ title, category, type = EnumPopularNews.
 
     return (
         <section className={`relative w-full ${className}`}>
-            {title && <Subtitle className='hidden lg:block mb-4 xl:mb-5 last:mb-0'>{title}</Subtitle>}
+            {title && (
+                <div className='flex items-center justify-between w-full pb-2 border-b-2 border-black mb-4 xl:mb-5 last:mb-0'>
+                    <Subtitle className='block sm:max-w-[60%]'>{title}</Subtitle>
+
+                    <BtnLink href={`/${category}`} btnType={EnumBtn.darkWithIcon} className='hidden sm:flex'>
+                        Go to {title}
+                    </BtnLink>
+                </div>
+            )}
 
             <div
                 className={cn('grid gap-6 sm:gap-4 xl:gap-5 w-full', {

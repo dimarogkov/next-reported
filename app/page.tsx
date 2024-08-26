@@ -6,7 +6,7 @@ const HomePage = () => {
         <>
             <Hero className='my-10 sm:my-12 lg:my-20 xl:my-28' />
 
-            <PopularNews title='Sports News' category={EnumCategoriesNews.sports} className='mb-12 lg:mb-20 xl:mb-28' />
+            <PopularNews title='Sports' category={EnumCategoriesNews.sports} className='mb-12 lg:mb-20 xl:mb-28' />
 
             <NewsRow className='mb-12 lg:mb-20 xl:mb-28'>
                 <NewsCol title='Sports' category={EnumCategoriesNews.sports} />
@@ -15,7 +15,7 @@ const HomePage = () => {
             </NewsRow>
 
             <PopularNews
-                title='Editors Choice'
+                title='Business'
                 type={EnumPopularNews.secondary}
                 category={EnumCategoriesNews.business}
                 className='mb-12 lg:mb-20 xl:mb-28'

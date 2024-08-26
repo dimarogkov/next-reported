@@ -23,7 +23,7 @@ const NewsCol: React.FC<Props> = ({ title, category, className = '' }) => {
 
     return (
         <div className={`relative flex flex-col w-full ${className}`}>
-            {title && <Subtitle className='hidden lg:block mb-4 xl:mb-5 last:mb-0'>{title}</Subtitle>}
+            {title && <Subtitle className='pb-2 border-b-2 border-black mb-4 xl:mb-5 last:mb-0'>{title}</Subtitle>}
 
             <div className='flex flex-col flex-grow w-full'>
                 {isLoading && (
