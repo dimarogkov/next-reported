@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { HeaderDrawer, HeaderLayer, HeaderMenu, HeaderNavigation, HeaderSearch } from '../elements/Header';
 import { Logo } from '../elements';
 
@@ -10,6 +11,7 @@ type Props = {
 const Header: React.FC<Props> = ({ className = '' }) => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const pathname = usePathname();
 
     const toggleSearch = () => setIsSearchOpen((prevState) => !prevState);
     const toggleMenu = () => setIsMenuOpen((prevState) => !prevState);
@@ -29,6 +31,11 @@ const Header: React.FC<Props> = ({ className = '' }) => {
         };
     }, [isMenuOpen, isSearchOpen]);
 
+    useEffect(() => {
+        setIsSearchOpen(false);
+        setIsMenuOpen(false);
+    }, [pathname]);
+
     return (
         <header className={`sticky top-0 left-0 z-20 w-full h-16 lg:h-20 ${className}`}>
             <div className='relative z-10 w-full h-full border-b border-gray bg-white'>
@@ -40,7 +47,7 @@ const Header: React.FC<Props> = ({ className = '' }) => {
             </div>
 
             <HeaderLayer isVisible={isMenuOpen || isSearchOpen} hideLayer={closeMenu} />
-            <HeaderDrawer isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
+            <HeaderDrawer pathname={pathname} isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
             <HeaderSearch isSearchOpen={isSearchOpen} />
         </header>
     );

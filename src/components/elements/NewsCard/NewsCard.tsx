@@ -18,9 +18,9 @@ type Props = {
 const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, className = '' }) => {
     const router = useRouter();
 
-    const { id, image, title, summary, authors, publish_date } = news;
+    const { id, image, category, title, summary, authors, publish_date } = news;
 
-    const navigateTo = () => router.push(`/news/${id}`);
+    const navigateTo = () => router.push(`/${category}/${id}`);
 
     return (
         <div
@@ -48,7 +48,7 @@ const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, classNam
                 />
 
                 {cardType === EnumCard.large && (
-                    <div className='flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-4 sm:gap-0 w-full mb-5 last:mb-0'>
+                    <div className='flex items-center justify-between gap-4 sm:gap-0 w-full mb-5 last:mb-0'>
                         <AuthorInfo authors={authors} />
                         <DateInfo date={publish_date} />
                     </div>

@@ -21,17 +21,17 @@ const NewsCardContent: React.FC<Props> = ({ type, title, summary, date, classNam
             {(type === EnumCard.default || type === EnumCard.small) && (
                 <>
                     <DateInfo date={date} className='mb-3 last:mb-0' />
-
-                    <Text textSize={EnumText.large} className='font-medium group-hover:underline'>
-                        {title}
-                    </Text>
+                    <Text className='font-medium sm:line-clamp-2 group-hover:underline'>{title}</Text>
                 </>
             )}
 
             {type === EnumCard.large && (
                 <>
-                    <Subtitle className=' group-hover:underline mb-3 last:mb-0'>{title}</Subtitle>
-                    <Text textSize={EnumText.large}>{summary}</Text>
+                    <Subtitle className='sm:line-clamp-2 group-hover:underline mb-3 last:mb-0'>{title}</Subtitle>
+
+                    <Text textSize={EnumText.large} className='sm:line-clamp-3'>
+                        {summary}
+                    </Text>
                 </>
             )}
         </div>

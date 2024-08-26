@@ -30,7 +30,7 @@ const PopularNews: React.FC<Props> = ({ title, category, type = EnumPopularNews.
 
     return (
         <section className={`relative w-full ${className}`}>
-            {title && <Subtitle className='hidden lg:block mb-5 last:mb-0'>{title}</Subtitle>}
+            {title && <Subtitle className='hidden lg:block mb-4 xl:mb-5 last:mb-0'>{title}</Subtitle>}
 
             <div
                 className={cn('grid gap-6 sm:gap-4 xl:gap-5 w-full', {

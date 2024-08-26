@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { menu } from '@/src/variables/menu';
+
 import Logo from '../Logo';
 import Socials from '../Socials';
 import { Text } from '../../ui';
@@ -7,12 +8,13 @@ import { X } from 'lucide-react';
 import cn from 'classnames';
 
 type Props = {
+    pathname: string;
     isMenuOpen: boolean;
     className?: string;
     closeMenu: () => void;
 };
 
-const HeaderDrawer: React.FC<Props> = ({ isMenuOpen, className = '', closeMenu = () => {} }) => {
+const HeaderDrawer: React.FC<Props> = ({ pathname, isMenuOpen, className = '', closeMenu = () => {} }) => {
     const { deskMenu, burgerMenu } = menu;
 
     return (
@@ -48,7 +50,12 @@ const HeaderDrawer: React.FC<Props> = ({ isMenuOpen, className = '', closeMenu =
                         <li key={id} className='block lg:hidden sm:w-full mb-6 last:mb-0'>
                             <Link
                                 href={href}
-                                className='font-semibold text-sm uppercase text-black transition-colors duration-300 hover:text-red'
+                                className={cn(
+                                    'font-semibold text-sm uppercase text-black transition-colors duration-300 hover:text-red',
+                                    {
+                                        'pointer-events-none text-red': pathname === href,
+                                    }
+                                )}
                             >
                                 {name}
                             </Link>
@@ -59,7 +66,12 @@ const HeaderDrawer: React.FC<Props> = ({ isMenuOpen, className = '', closeMenu =
                         <li key={id} className='sm:w-full mb-6 lg:mb-8 last:mb-0'>
                             <Link
                                 href={href}
-                                className='font-semibold text-sm lg:text-base uppercase text-black transition-colors duration-300 hover:text-red'
+                                className={cn(
+                                    'font-semibold text-sm lg:text-base uppercase text-black transition-colors duration-300 hover:text-red',
+                                    {
+                                        'pointer-events-none text-red': pathname === href,
+                                    }
+                                )}
                             >
                                 {name}
                             </Link>

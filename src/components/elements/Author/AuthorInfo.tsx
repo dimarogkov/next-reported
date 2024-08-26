@@ -10,7 +10,7 @@ type Props = {
 
 const AuthorInfo: React.FC<Props> = ({ authors, className = '' }) => {
     return (
-        <div className={`relative flex lg:max-w-[50%] items-center gap-2 ${className}`}>
+        <div className={`relative flex sm:max-w-[60%] items-center gap-2 ${className}`}>
             <div className='avatar-group -space-x-5 rtl:space-x-reverse'>
                 {authors.slice(0, 3).map((author) => (
                     <AuthorAvatar author={author} key={author} />
@@ -25,7 +25,7 @@ const AuthorInfo: React.FC<Props> = ({ authors, className = '' }) => {
                 )}
             </div>
 
-            <Text textSize={EnumText.small} className='hidden lg:block flex-grow basis-0 truncate'>
+            <Text textSize={EnumText.small} className='hidden sm:block flex-grow basis-0 truncate'>
                 <span>By </span>
                 {authors.map((author, index) =>
                     index !== authors.length - 1 ? (

@@ -33,7 +33,7 @@ const NewsCardContentSkeleton = ({ cardType }: { cardType: string }) => {
         >
             {(cardType === EnumCard.default || cardType === EnumCard.small) && (
                 <>
-                    <div className='relative w-48 h-8 mb-3 last:mb-0'>
+                    <div className='relative w-32 h-8 mb-3 last:mb-0'>
                         <Skeleton />
                     </div>
 
@@ -124,7 +124,7 @@ const NewsCardSkeleton: React.FC<Props> = ({ cardType = EnumCard.default, classN
                     <div className='flex flex-col-reverse sm:flex-row sm:items-center justify-between gap-4 sm:gap-0 w-full mb-5 last:mb-0'>
                         <NewsCardAuthorsSkeleton />
 
-                        <div className='relative w-48 h-8'>
+                        <div className='relative w-32 h-8'>
                             <Skeleton />
                         </div>
                     </div>
