@@ -20,7 +20,7 @@ const NewsCardContent: React.FC<Props> = ({ type, title, summary, date, classNam
         >
             {(type === EnumCard.default || type === EnumCard.small) && (
                 <>
-                    <DateInfo date={date} className='mb-3 last:mb-0' />
+                    <DateInfo date={date} className='mb-2 last:mb-0' />
                     <Text className='font-medium sm:line-clamp-2 group-hover:underline'>{title}</Text>
                 </>
             )}

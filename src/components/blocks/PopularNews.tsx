@@ -1,9 +1,7 @@
-'use client';
-import { useQuery } from '@tanstack/react-query';
 import { getNewsByCategory } from '@/src/services/news';
 import { EnumBtn, EnumCard, EnumPopularNews } from '@/src/types/enums';
 
-import { NewsCard, NewsCardSkeleton } from '../elements/NewsCard';
+import { NewsCard } from '../elements/NewsCard';
 import { BtnLink, Subtitle } from '../ui';
 import cn from 'classnames';
 
@@ -14,19 +12,9 @@ type Props = {
     className?: string;
 };
 
-const PopularNews: React.FC<Props> = ({ title, category, type = EnumPopularNews.default, className = '' }) => {
-    const { data: newsArr, isLoading } = useQuery({
-        queryFn: () => getNewsByCategory(category),
-        select: (data) => data.data.slice(0, 5),
-        queryKey: ['popular news', category],
-        refetchOnWindowFocus: false,
-    });
-
-    const defaultIsLoading = type === EnumPopularNews.default && isLoading;
-    const defaultIsExist = type === EnumPopularNews.default && newsArr;
-
-    const secondaryIsLoading = type === EnumPopularNews.secondary && isLoading;
-    const secondaryIsExist = type === EnumPopularNews.secondary && newsArr;
+const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopularNews.default, className = '' }) => {
+    const newsArr = await getNewsByCategory(category).then((data) => data.slice(0, 5));
+    const isDefaultPopularNews = type === EnumPopularNews.default;
 
     return (
         <section className={`relative w-full ${className}`}>
@@ -46,19 +34,7 @@ const PopularNews: React.FC<Props> = ({ title, category, type = EnumPopularNews.
                     'sm:grid-cols-2 lg:grid-cols-12 sm:grid-rows-4': type === EnumPopularNews.secondary,
                 })}
             >
-                {defaultIsLoading &&
-                    [0, 1, 2, 3, 4].map((_, index) => (
-                        <NewsCardSkeleton
-                            cardType={index === 0 ? EnumCard.large : EnumCard.default}
-                            key={index}
-                            className={cn({
-                                'sm:col-span-2 lg:col-span-6 row-span-2': index === 0,
-                                'sm:col-span-1 lg:col-span-3 row-span-1': index !== 0,
-                            })}
-                        />
-                    ))}
-
-                {defaultIsExist &&
+                {isDefaultPopularNews &&
                     newsArr.map((news, index) => (
                         <NewsCard
                             news={news}
@@ -71,19 +47,7 @@ const PopularNews: React.FC<Props> = ({ title, category, type = EnumPopularNews.
                         />
                     ))}
 
-                {secondaryIsLoading &&
-                    [0, 1, 2, 3, 4].map((_, index) => (
-                        <NewsCardSkeleton
-                            cardType={index === 0 ? EnumCard.large : EnumCard.small}
-                            key={index}
-                            className={cn({
-                                'sm:col-span-2 lg:col-span-7 row-span-2 lg:row-span-4': index === 0,
-                                'sm:col-span-1 lg:col-span-5 row-span-1': index !== 0,
-                            })}
-                        />
-                    ))}
-
-                {secondaryIsExist &&
+                {!isDefaultPopularNews &&
                     newsArr.map((news, index) => (
                         <NewsCard
                             news={news}

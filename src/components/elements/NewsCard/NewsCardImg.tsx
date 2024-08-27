@@ -6,14 +6,13 @@ type Props = {
     type: string;
     src: string;
     alt: string;
-    className?: string;
 };
 
-const NewsCardImg: React.FC<Props> = ({ type, src, alt, className = '' }) => {
+const NewsCardImg: React.FC<Props> = ({ type, src, alt }) => {
     return (
         <div
             className={cn(
-                `relative w-full h-0 pb-[65%] rounded-lg overflow-hidden border border-gray bg-gray last:mb-0 ${className}`,
+                'relative w-full h-0 pb-[65%] rounded-lg overflow-hidden border border-gray bg-gray last:mb-0',
                 {
                     'lg:w-[40%] lg:pb-[32%] mb-4 lg:mb-0': type === EnumCard.small,
                     'mb-5': type === EnumCard.large,

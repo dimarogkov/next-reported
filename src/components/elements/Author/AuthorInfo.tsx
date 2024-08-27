@@ -5,12 +5,11 @@ import { Text } from '../../ui';
 
 type Props = {
     authors: string[];
-    className?: string;
 };
 
-const AuthorInfo: React.FC<Props> = ({ authors, className = '' }) => {
+const AuthorInfo: React.FC<Props> = ({ authors }) => {
     return (
-        <div className={`relative flex sm:max-w-[60%] items-center gap-2 ${className}`}>
+        <div className='relative flex sm:max-w-[60%] items-center gap-2'>
             <div className='avatar-group -space-x-5 rtl:space-x-reverse'>
                 {authors.slice(0, 3).map((author) => (
                     <AuthorAvatar author={author} key={author} />

@@ -1,21 +1,28 @@
+'use client';
+import { useEffect, useState } from 'react';
+import { capitalizeFirstLetter } from '@/src/helpers/capitalizeFirstLetter';
 import { EnumBtn } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
-import { capitalizeFirstLetter } from '@/src/helpers/capitalizeFirstLetter';
 
 import HeroSkeleton from './HeroSkeleton';
 import { Badge, BtnLink, Text, Title } from '../../ui';
 
 type Props = {
-    news: INews | undefined;
-    className?: string;
+    news: INews;
 };
 
-const HeroContent: React.FC<Props> = ({ news, className = '' }) => {
-    const categoryName = capitalizeFirstLetter(news?.category);
+const HeroContent: React.FC<Props> = ({ news }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        news ? setIsLoading(false) : setIsLoading(true);
+    }, [news]);
+
+    const categoryName = capitalizeFirstLetter(news.category);
 
     return (
-        <div className={`w-full ${className}`}>
-            {news ? (
+        <div className='w-full'>
+            {!isLoading ? (
                 <>
                     <div className='flex mb-3 md:mb-4 last:mb-0'>
                         <Badge>{categoryName}</Badge>

@@ -1,12 +1,8 @@
 import { FooterBottom, FooterTop } from '../elements/Footer';
 
-type Props = {
-    className?: string;
-};
-
-const Footer: React.FC<Props> = ({ className }) => {
+const Footer: React.FC = () => {
     return (
-        <footer className={`relative w-full bg-[#000] ${className}`}>
+        <footer className='relative w-full bg-[#000]'>
             <FooterTop />
             <FooterBottom />
         </footer>

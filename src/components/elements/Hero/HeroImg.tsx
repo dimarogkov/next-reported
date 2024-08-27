@@ -1,30 +1,30 @@
+'use client';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Skeleton } from '../../ui';
-import { useState } from 'react';
 
 type Props = {
-    src: string | undefined;
-    alt: string | undefined;
-    isLoading: boolean;
-    className?: string;
+    src: string;
+    alt: string;
 };
 
-const HeroImg: React.FC<Props> = ({ src, alt, isLoading, className = '' }) => {
-    const [isImgLoad, setIsImgLoad] = useState(true);
+const HeroImg: React.FC<Props> = ({ src, alt }) => {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        src ? setIsLoading(false) : setIsLoading(true);
+    }, [src]);
 
     return (
-        <div
-            className={`relative w-full h-0 pb-[65%] sm:pb-[60%] lg:pb-[35%] rounded-md overflow-hidden bg-gray ${className}`}
-        >
+        <div className='relative w-full h-0 pb-[65%] sm:pb-[60%] lg:pb-[35%] rounded-md overflow-hidden bg-gray'>
             {isLoading && <Skeleton />}
 
-            {isImgLoad && src && (
+            {!isLoading && (
                 <Image
                     src={src}
-                    alt={alt || ''}
+                    alt={alt}
                     fill
                     className='absolute top-0 left-0 w-full h-full object-cover object-center'
-                    onError={() => setIsImgLoad(false)}
                 />
             )}
         </div>

@@ -10,17 +10,16 @@ import cn from 'classnames';
 type Props = {
     pathname: string;
     isMenuOpen: boolean;
-    className?: string;
     closeMenu: () => void;
 };
 
-const HeaderDrawer: React.FC<Props> = ({ pathname, isMenuOpen, className = '', closeMenu = () => {} }) => {
+const HeaderDrawer: React.FC<Props> = ({ pathname, isMenuOpen, closeMenu = () => {} }) => {
     const { deskMenu, burgerMenu } = menu;
 
     return (
         <div
             className={cn(
-                `fixed z-10 top-0 right-0 w-full sm:w-[450px] h-full overflow-auto bg-white transition-transform duration-300 ${className}`,
+                'fixed z-10 top-0 right-0 w-full sm:w-[450px] h-full overflow-auto bg-white transition-transform duration-300',
                 {
                     'translate-x-full sm:translate-x-[450px]': !isMenuOpen,
                     'translate-x-0': isMenuOpen,

@@ -1,27 +1,20 @@
-'use client';
-import { useQuery } from '@tanstack/react-query';
 import { getNewsByCategory } from '@/src/services/news';
-import { HeroContent, HeroImg } from '../elements/Hero';
 import { EnumCategoriesNews } from '@/src/types/enums';
+import { HeroContent, HeroImg } from '../elements/Hero';
 
 type Props = {
     className?: string;
 };
 
-const Hero: React.FC<Props> = ({ className = '' }) => {
-    const { data: news, isLoading } = useQuery({
-        queryFn: () => getNewsByCategory(EnumCategoriesNews.politics),
-        select: (data) => data.data[1],
-        queryKey: ['hero news'],
-        refetchOnWindowFocus: false,
-    });
+const Hero: React.FC<Props> = async ({ className = '' }) => {
+    const news = await getNewsByCategory(EnumCategoriesNews.politics).then((data) => data[1]);
 
     return (
         <section
             className={`relative flex-col-reverse lg:flex-row flex items-center gap-5 md:gap-8 lg:gap-10 w-full ${className}`}
         >
             <HeroContent news={news} />
-            <HeroImg src={news?.image} alt={news?.title} isLoading={isLoading} />
+            <HeroImg src={news.image} alt={news.title} />
         </section>
     );
 };

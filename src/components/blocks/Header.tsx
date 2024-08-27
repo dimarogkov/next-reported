@@ -1,14 +1,14 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { HeaderDrawer, HeaderLayer, HeaderMenu, HeaderNavigation, HeaderSearch } from '../elements/Header';
 import { Logo } from '../elements';
 
 type Props = {
-    className?: string;
+    setIsBodyLock: Dispatch<SetStateAction<boolean>>;
 };
 
-const Header: React.FC<Props> = ({ className = '' }) => {
+const Header: React.FC<Props> = ({ setIsBodyLock }) => {
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const pathname = usePathname();
@@ -22,14 +22,8 @@ const Header: React.FC<Props> = ({ className = '' }) => {
     };
 
     useEffect(() => {
-        isSearchOpen || isMenuOpen
-            ? (document.body.style.overflow = 'hidden')
-            : (document.body.style.overflow = 'unset');
-
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
-    }, [isMenuOpen, isSearchOpen]);
+        setIsBodyLock(isMenuOpen || isSearchOpen);
+    }, [isMenuOpen, isSearchOpen, setIsBodyLock]);
 
     useEffect(() => {
         setIsSearchOpen(false);
@@ -37,7 +31,7 @@ const Header: React.FC<Props> = ({ className = '' }) => {
     }, [pathname]);
 
     return (
-        <header className={`sticky top-0 left-0 z-20 w-full h-16 lg:h-20 ${className}`}>
+        <header className='sticky top-0 left-0 z-20 w-full h-16 lg:h-20'>
             <div className='relative z-10 w-full h-full border-b border-gray bg-white'>
                 <div className='flex items-center justify-between w-full h-full max-w-screen-2xl px-4 sm:px-5 mx-auto'>
                     <Logo className='xl:min-w-60' />

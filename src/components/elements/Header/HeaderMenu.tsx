@@ -1,15 +1,11 @@
 import Link from 'next/link';
 import { menu } from '@/src/variables/menu';
 
-type Props = {
-    className?: string;
-};
-
-const HeaderMenu: React.FC<Props> = ({ className = '' }) => {
+const HeaderMenu: React.FC = () => {
     const { deskMenu } = menu;
 
     return (
-        <ul className={`hidden lg:flex gap-6 xl:gap-10 ${className}`}>
+        <ul className='hidden lg:flex gap-6 xl:gap-10'>
             {deskMenu.map(({ id, href, name }) => (
                 <li key={id}>
                     <Link
