@@ -1,7 +1,12 @@
 import Link from 'next/link';
 import { menu } from '@/src/variables/menu';
+import cn from 'classnames';
 
-const HeaderMenu: React.FC = () => {
+type Props = {
+    pathname: string;
+};
+
+const HeaderMenu: React.FC<Props> = ({ pathname }) => {
     const { deskMenu } = menu;
 
     return (
@@ -10,7 +15,12 @@ const HeaderMenu: React.FC = () => {
                 <li key={id}>
                     <Link
                         href={href}
-                        className='font-semibold text-sm uppercase text-black transition-colors duration-300 hover:text-red'
+                        className={cn(
+                            'font-semibold text-sm uppercase text-black transition-colors duration-300 hover:text-red',
+                            {
+                                'pointer-events-none text-red': pathname === href,
+                            }
+                        )}
                     >
                         {name}
                     </Link>

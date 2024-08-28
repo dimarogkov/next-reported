@@ -35,7 +35,7 @@ const Header: React.FC<Props> = ({ setIsBodyLock }) => {
             <div className='relative z-10 w-full h-full border-b border-gray bg-white'>
                 <div className='flex items-center justify-between w-full h-full max-w-screen-2xl px-4 sm:px-5 mx-auto'>
                     <Logo className='xl:min-w-60' />
-                    <HeaderMenu />
+                    <HeaderMenu pathname={pathname} />
                     <HeaderNavigation toggleSearch={toggleSearch} toggleMenu={toggleMenu} />
                 </div>
             </div>
