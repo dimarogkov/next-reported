@@ -1,5 +1,5 @@
 import { EnumCategoriesNews, EnumPopularNews } from '@/src/types/enums';
-import { Hero, NewsCol, NewsRow, PopularNews, Subscribe } from '@/src/components/blocks';
+import { Categories, Hero, NewsCol, NewsRow, PopularNews, Subscribe } from '@/src/components/blocks';
 
 const HomePage = () => {
     return (
@@ -13,6 +13,8 @@ const HomePage = () => {
                 <NewsCol title='Politics' category={EnumCategoriesNews.politics} />
                 <NewsCol title='Science' category={EnumCategoriesNews.science} />
             </NewsRow>
+
+            <Categories className='mb-12 lg:mb-20 xl:mb-28' />
 
             <PopularNews
                 title='Business'

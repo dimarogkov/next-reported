@@ -1,5 +1,5 @@
 import { getNewsByCategory } from '@/src/services/news';
-import NewsColList from '../elements/NewsColList';
+import { NewsColList } from '../elements';
 import { Subtitle } from '../ui';
 
 type Props = {
