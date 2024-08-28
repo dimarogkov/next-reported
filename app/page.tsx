@@ -1,10 +1,12 @@
 import { EnumCategoriesNews, EnumPopularNews } from '@/src/types/enums';
-import { Categories, Hero, NewsCol, NewsRow, PopularNews, Subscribe } from '@/src/components/blocks';
+import { Categories, CtyBanner, Hero, NewsCol, NewsRow, PopularNews, Subscribe } from '@/src/components/blocks';
 
 const HomePage = () => {
     return (
         <>
-            <Hero className='my-10 sm:my-12 lg:my-20 xl:my-28' />
+            <Hero className='my-10 sm:my-12 lg:my-20 xl:my-24' />
+
+            <CtyBanner className='mb-12 lg:mb-20 xl:mb-28' />
 
             <PopularNews title='Sports' category={EnumCategoriesNews.sports} className='mb-12 lg:mb-20 xl:mb-28' />
 

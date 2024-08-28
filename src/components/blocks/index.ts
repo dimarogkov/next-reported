@@ -1,4 +1,5 @@
 import Categories from './Categories';
+import CtyBanner from './CtyBanner';
 import Footer from './Footer';
 import Header from './Header';
 import Hero from './Hero';
@@ -7,4 +8,4 @@ import NewsRow from './NewsRow';
 import PopularNews from './PopularNews';
 import Subscribe from './Subscribe';
 
-export { Categories, Footer, Header, Hero, NewsCol, NewsRow, PopularNews, Subscribe };
+export { Categories, CtyBanner, Footer, Header, Hero, NewsCol, NewsRow, PopularNews, Subscribe };
