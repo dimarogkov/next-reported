@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { capitalizeFirstLetter } from '@/src/helpers/capitalizeFirstLetter';
+import { Categories, CategoryNews, Subscribe } from '@/src/components/blocks';
 
 type Props = {
     params: {
@@ -15,12 +16,16 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
     };
 };
 
-const NewsDetailPage: React.FC<Props> = ({ params }) => {
+const CategoryPage: React.FC<Props> = ({ params }) => {
     return (
-        <section className='relative w-full'>
-            <div>Category Name - {params.categoryName}</div>
-        </section>
+        <>
+            <CategoryNews category={params.categoryName} className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-8 lg:mt-10' />
+
+            <Categories className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
+
+            <Subscribe className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
+        </>
     );
 };
 
-export default NewsDetailPage;
+export default CategoryPage;

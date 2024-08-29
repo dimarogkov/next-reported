@@ -13,11 +13,11 @@ import cn from 'classnames';
 
 type Props = {
     news: INews;
-    cardType: string;
+    cardType?: string;
     className?: string;
 };
 
-const NewsCard: React.FC<Props> = ({ news, cardType, className = '' }) => {
+const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, className = '' }) => {
     const router = useRouter();
 
     const { id, image, category, title, summary, authors, publish_date } = news;
