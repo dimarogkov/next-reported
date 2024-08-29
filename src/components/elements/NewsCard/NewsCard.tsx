@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { Suspense } from 'react';
 import { useRouter } from 'next/navigation';
 import { EnumCard } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
@@ -18,55 +18,46 @@ type Props = {
 };
 
 const NewsCard: React.FC<Props> = ({ news, cardType, className = '' }) => {
-    const [isLoading, setIsLoading] = useState(true);
     const router = useRouter();
-
-    useEffect(() => {
-        news ? setIsLoading(false) : setIsLoading(true);
-    }, [news]);
 
     const { id, image, category, title, summary, authors, publish_date } = news;
     const navigateTo = () => router.push(`/${category}/${id}`);
 
     return (
-        <>
-            {isLoading && <NewsCardSkeleton cardType={cardType} className={className} />}
+        <Suspense fallback={<NewsCardSkeleton cardType={cardType} className={className} />}>
+            <div
+                onClick={navigateTo}
+                className={cn(`relative cursor-pointer group ${className}`, {
+                    'lg:flex lg:flex-col w-full': cardType === EnumCard.large,
+                    'lg:flex lg:items-center lg:justify-between w-full': cardType === EnumCard.small,
+                    'w-full block': cardType === EnumCard.default,
+                })}
+            >
+                <NewsCardImg type={cardType} src={image} alt={title} />
 
-            {!isLoading && (
                 <div
-                    onClick={navigateTo}
-                    className={cn(`relative cursor-pointer group ${className}`, {
-                        'lg:flex lg:flex-col w-full': cardType === EnumCard.large,
-                        'lg:flex lg:items-center lg:justify-between w-full': cardType === EnumCard.small,
-                        'w-full block': cardType === EnumCard.default,
+                    className={cn('w-full', {
+                        'flex flex-col flex-grow': cardType === EnumCard.large,
+                        'lg:w-[57%]': cardType === EnumCard.small,
                     })}
                 >
-                    <NewsCardImg type={cardType} src={image} alt={title} />
+                    <NewsCardContent
+                        type={cardType}
+                        title={title}
+                        summary={summary}
+                        date={publish_date}
+                        className='mb-4 sm:mb-5 last:mb-0'
+                    />
 
-                    <div
-                        className={cn('w-full', {
-                            'flex flex-col flex-grow': cardType === EnumCard.large,
-                            'lg:w-[57%]': cardType === EnumCard.small,
-                        })}
-                    >
-                        <NewsCardContent
-                            type={cardType}
-                            title={title}
-                            summary={summary}
-                            date={publish_date}
-                            className='mb-4 sm:mb-5 last:mb-0'
-                        />
-
-                        {cardType === EnumCard.large && (
-                            <div className='flex items-center justify-between gap-4 sm:gap-0 w-full mb-5 last:mb-0'>
-                                <AuthorInfo authors={authors} />
-                                <DateInfo date={publish_date} />
-                            </div>
-                        )}
-                    </div>
+                    {cardType === EnumCard.large && (
+                        <div className='flex items-center justify-between gap-4 sm:gap-0 w-full mb-5 last:mb-0'>
+                            <AuthorInfo authors={authors} />
+                            <DateInfo date={publish_date} />
+                        </div>
+                    )}
                 </div>
-            )}
-        </>
+            </div>
+        </Suspense>
     );
 };
 

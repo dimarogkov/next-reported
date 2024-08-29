@@ -1,10 +1,8 @@
-'use client';
-import { useEffect, useState } from 'react';
 import { EnumBtn, EnumCard } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
 
 import { NewsCard } from './NewsCard';
-import { BtnLink, Skeleton } from '../ui';
+import { BtnLink } from '../ui';
 import cn from 'classnames';
 
 type Props = {
@@ -14,12 +12,6 @@ type Props = {
 };
 
 const NewsColList: React.FC<Props> = ({ title, category, newsArr }) => {
-    const [isLoading, setIsLoading] = useState(true);
-
-    useEffect(() => {
-        newsArr.length > 0 ? setIsLoading(false) : setIsLoading(true);
-    }, [newsArr]);
-
     return (
         <div className='flex flex-col flex-grow w-full'>
             <div className='grid sm:grid-cols-2 lg:grid-cols-1 flex-grow gap-6 sm:gap-4 xl:gap-5 w-full mb-5 last:mb-0'>
@@ -33,15 +25,9 @@ const NewsColList: React.FC<Props> = ({ title, category, newsArr }) => {
                 ))}
             </div>
 
-            {!isLoading ? (
-                <BtnLink href={`/${category}`} btnType={EnumBtn.withIcon} className='sm:w-full'>
-                    Go to {title}
-                </BtnLink>
-            ) : (
-                <div className='relative sm:w-full h-8 lg:h-10'>
-                    <Skeleton />
-                </div>
-            )}
+            <BtnLink href={`/${category}`} btnType={EnumBtn.withIcon} className='sm:w-full'>
+                Go to {title}
+            </BtnLink>
         </div>
     );
 };
