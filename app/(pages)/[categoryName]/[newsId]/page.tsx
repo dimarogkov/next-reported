@@ -1,8 +1,9 @@
 import { Metadata } from 'next';
-import { capitalizeFirstLetter } from '@/src/helpers/capitalizeFirstLetter';
+import { capitalizeFirstLetter } from '@/src/helpers';
 import { getNewsById } from '@/src/services/news';
 import { menu } from '@/src/variables/menu';
-import { Categories, NewsCol, NewsDetail, NewsRow, Subscribe } from '@/src/components/blocks';
+
+import { Breadcrumbs, Categories, NewsCol, NewsDetail, NewsRow, Subscribe } from '@/src/components/blocks';
 
 type Props = {
     params: {
@@ -29,7 +30,9 @@ const NewsDetailPage: React.FC<Props> = async ({ params }) => {
 
     return (
         <>
-            <NewsDetail news={news} className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-8 lg:mt-10' />
+            <Breadcrumbs className='my-6 xl:my-8' />
+
+            <NewsDetail news={news} className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-8 sm:mt-0' />
 
             <NewsRow className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24'>
                 {categories.map((category) => (

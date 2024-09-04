@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { capitalizeFirstLetter } from '@/src/helpers/capitalizeFirstLetter';
+import { capitalizeFirstLetter } from '@/src/helpers';
 import { EnumAuthorInfo, EnumText } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
 
@@ -18,7 +18,7 @@ const NewsDetail: React.FC<Props> = ({ news, className = '' }) => {
 
     return (
         <section className={`relative w-full ${className}`}>
-            <div className='relative flex items-end w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] p-4 md:p-5 lg:p-8 xl:p-10 rounded-lg overflow-hidden mb-10 last:mb-0'>
+            <div className='relative flex items-end w-full h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] p-4 md:p-5 lg:p-8 xl:p-10 rounded-lg overflow-hidden mb-8 lg:mb-10 last:mb-0'>
                 <Image
                     src={image}
                     alt={title}
@@ -43,8 +43,10 @@ const NewsDetail: React.FC<Props> = ({ news, className = '' }) => {
             </div>
 
             <div className='flex flex-col gap-5 w-full'>
-                <Text textSize={EnumText.large}>{summary}</Text>
-                <Text textSize={EnumText.large}>{text}</Text>
+                {summary && <Text textSize={EnumText.large}>{summary}</Text>}
+
+                {text && <Text textSize={EnumText.large}>{text}</Text>}
+
                 <Text textSize={EnumText.large}>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officia voluptate quas molestias, tenetur
                     maxime corrupti, quod harum quibusdam voluptatibus perferendis temporibus itaque ea? Esse eos, nobis

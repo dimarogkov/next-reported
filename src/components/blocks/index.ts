@@ -1,3 +1,4 @@
+import Breadcrumbs from './Breadcrumb';
 import Categories from './Categories';
 import CategoryNews from './CategoryNews';
 import CtyBanner from './CtyBanner';
@@ -11,6 +12,7 @@ import PopularNews from './PopularNews';
 import Subscribe from './Subscribe';
 
 export {
+    Breadcrumbs,
     Categories,
     CategoryNews,
     CtyBanner,

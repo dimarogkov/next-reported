@@ -1,5 +1,5 @@
 import { Suspense } from 'react';
-import { capitalizeFirstLetter } from '@/src/helpers/capitalizeFirstLetter';
+import { capitalizeFirstLetter } from '@/src/helpers';
 import { EnumBtn } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
 
