@@ -18,7 +18,7 @@ const Subscribe: React.FC<Props> = ({ className = '' }) => {
 
             <form className='flex flex-col sm:flex-row gap-3 sm:gap-2 w-full md:w-[50%] xl:w-[45%]'>
                 <Label className='flex items-center w-full'>
-                    <Mail className='absolute left-2 w-5 lg:w-6 h-5 lg:h-6 stroke-1 text-black/50' />
+                    <Mail className='absolute z-10 left-2 w-5 lg:w-6 h-5 lg:h-6 stroke-1 text-black/50' />
                     <Input name='email' placeholder='Enter your email' className='pl-9 lg:pl-10' />
                 </Label>
 

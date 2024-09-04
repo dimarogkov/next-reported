@@ -1,3 +1,4 @@
+import { EnumAuthorInfo } from './AuthorInfo';
 import { EnumBtn } from './Btn';
 import { EnumCard } from './Card';
 import { EnumCategoriesNews } from './CategoriesNews';
@@ -6,4 +7,4 @@ import { EnumPopularNews } from './PopularNews';
 import { EnumSocials } from './Socials';
 import { EnumText } from './Text';
 
-export { EnumBtn, EnumCard, EnumCategoriesNews, EnumLogo, EnumPopularNews, EnumSocials, EnumText };
+export { EnumAuthorInfo, EnumBtn, EnumCard, EnumCategoriesNews, EnumLogo, EnumPopularNews, EnumSocials, EnumText };

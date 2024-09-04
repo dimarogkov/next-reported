@@ -1,13 +1,18 @@
+'use client';
 import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { getAvatar } from '@/src/services/avatar';
+import { EnumAuthorInfo } from '@/src/types/enums';
+
 import { Skeleton } from '../../ui';
+import cn from 'classnames';
 
 type Props = {
+    type: string;
     author: string;
 };
 
-const AuthorAvatar: React.FC<Props> = ({ author }) => {
+const AuthorAvatar: React.FC<Props> = ({ type, author }) => {
     const { data: avatar, isLoading } = useQuery({
         queryFn: () => getAvatar(author),
         select: (data) => data.data,
@@ -16,7 +21,12 @@ const AuthorAvatar: React.FC<Props> = ({ author }) => {
     });
 
     return (
-        <div className='avatar w-11 h-11'>
+        <div
+            className={cn('avatar placeholder', {
+                'w-10 h-10 border-2': type === EnumAuthorInfo.light,
+                'w-11 h-11': type === EnumAuthorInfo.dark,
+            })}
+        >
             <div className='w-full'>
                 {isLoading && <Skeleton />}
 

@@ -1,9 +1,15 @@
 import axios from 'axios';
-import { INews } from '../types/interfaces/News';
 import { NEWS_URL } from '../variables';
+import { INews } from '../types/interfaces/News';
 
 export const getNewsByCategory = async (category: string) => {
     const response = await axios.get<INews[]>(`${NEWS_URL}/all?category=${category}`);
 
     return response.data;
+};
+
+export const getNewsById = async (newsId: string) => {
+    const response = await axios.get<INews[]>(`${NEWS_URL}/all?id=${newsId}`);
+
+    return response.data[0];
 };
