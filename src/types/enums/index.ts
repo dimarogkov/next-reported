@@ -5,6 +5,17 @@ import { EnumCategoriesNews } from './CategoriesNews';
 import { EnumLogo } from './Logo';
 import { EnumPopularNews } from './PopularNews';
 import { EnumSocials } from './Socials';
+import { EnumSubscribe } from './Subscribe';
 import { EnumText } from './Text';
 
-export { EnumAuthorInfo, EnumBtn, EnumCard, EnumCategoriesNews, EnumLogo, EnumPopularNews, EnumSocials, EnumText };
+export {
+    EnumAuthorInfo,
+    EnumBtn,
+    EnumCard,
+    EnumCategoriesNews,
+    EnumLogo,
+    EnumPopularNews,
+    EnumSocials,
+    EnumSubscribe,
+    EnumText,
+};

@@ -1,6 +1,6 @@
 import { Metadata } from 'next';
 import { capitalizeFirstLetter } from '@/src/helpers';
-import { Breadcrumbs, Categories, CategoryNews, Subscribe } from '@/src/components/blocks';
+import { Breadcrumbs, CategoryNews, CtyBanner } from '@/src/components/blocks';
 
 type Props = {
     params: {
@@ -23,9 +23,7 @@ const CategoryPage: React.FC<Props> = ({ params }) => {
 
             <CategoryNews category={params.categoryName} className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-8 sm:mt-0' />
 
-            <Categories className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
-
-            <Subscribe className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
+            <CtyBanner className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
         </>
     );
 };
