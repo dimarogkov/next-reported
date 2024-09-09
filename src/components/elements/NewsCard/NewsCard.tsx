@@ -1,6 +1,5 @@
 'use client';
 import { Suspense } from 'react';
-import { useRouter } from 'next/navigation';
 import { EnumCard } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
 
@@ -18,22 +17,20 @@ type Props = {
 };
 
 const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, className = '' }) => {
-    const router = useRouter();
-
     const { id, image, category, title, summary, authors, publish_date } = news;
-    const navigateTo = () => router.push(`/${category}/${id}`);
+
+    // `/${category}/${id}`
 
     return (
         <Suspense fallback={<NewsCardSkeleton cardType={cardType} className={className} />}>
             <div
-                onClick={navigateTo}
-                className={cn(`relative cursor-pointer group ${className}`, {
+                className={cn(`relative cursor-pointer ${className}`, {
                     'lg:flex lg:flex-col w-full': cardType === EnumCard.large,
                     'lg:flex lg:items-center lg:justify-between w-full': cardType === EnumCard.small,
                     'w-full block': cardType === EnumCard.default,
                 })}
             >
-                <NewsCardImg type={cardType} src={image} alt={title} />
+                <NewsCardImg type={cardType} href={`/${category}/${id}`} src={image} alt={title} />
 
                 <div
                     className={cn('w-full', {
@@ -43,6 +40,7 @@ const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, classNam
                 >
                     <NewsCardContent
                         type={cardType}
+                        href={`/${category}/${id}`}
                         title={title}
                         summary={summary}
                         date={publish_date}

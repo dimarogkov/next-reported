@@ -1,18 +1,21 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { EnumCard } from '@/src/types/enums';
 import cn from 'classnames';
 
 type Props = {
     type: string;
+    href: string;
     src: string;
     alt: string;
 };
 
-const NewsCardImg: React.FC<Props> = ({ type, src, alt }) => {
+const NewsCardImg: React.FC<Props> = ({ type, href, src, alt }) => {
     return (
-        <div
+        <Link
+            href={href}
             className={cn(
-                'relative w-full h-0 pb-[65%] rounded-lg overflow-hidden border border-gray bg-gray last:mb-0',
+                'relative block w-full h-0 pb-[65%] rounded-lg overflow-hidden border border-gray bg-gray last:mb-0',
                 {
                     'lg:w-[40%] lg:pb-[32%] mb-4 lg:mb-0': type === EnumCard.small,
                     'mb-5': type === EnumCard.large,
@@ -23,10 +26,10 @@ const NewsCardImg: React.FC<Props> = ({ type, src, alt }) => {
             <Image
                 src={src}
                 alt={alt}
-                className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-transform duration-500 group-hover:scale-110'
+                className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-all duration-500 hover:scale-110 hover:brightness-75'
                 fill
             />
-        </div>
+        </Link>
     );
 };
 
