@@ -30,8 +30,8 @@ const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopula
 
             <div
                 className={cn('grid gap-6 sm:gap-4 xl:gap-5 w-full', {
-                    'sm:grid-cols-2 lg:grid-cols-12 sm:grid-rows-4 lg:grid-rows-2': type === EnumPopularNews.default,
-                    'sm:grid-cols-2 lg:grid-cols-12 sm:grid-rows-4': type === EnumPopularNews.secondary,
+                    'sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-2': type === EnumPopularNews.default,
+                    'sm:grid-cols-2 lg:grid-cols-12 lg:grid-rows-4': type === EnumPopularNews.secondary,
                 })}
             >
                 {isDefaultPopularNews &&
@@ -41,8 +41,8 @@ const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopula
                             cardType={index === 0 ? EnumCard.large : EnumCard.default}
                             key={news.id}
                             className={cn({
-                                'sm:col-span-2 lg:col-span-6 row-span-2': index === 0,
-                                'sm:col-span-1 lg:col-span-3 row-span-1': index !== 0,
+                                'sm:col-span-2 lg:col-span-6 lg:row-span-2': index === 0,
+                                'sm:col-span-1 lg:col-span-3 lg:row-span-1': index !== 0,
                             })}
                         />
                     ))}
@@ -54,8 +54,8 @@ const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopula
                             cardType={index === 0 ? EnumCard.large : EnumCard.small}
                             key={news.id}
                             className={cn({
-                                'sm:col-span-2 lg:col-span-7 row-span-2 lg:row-span-4': index === 0,
-                                'sm:col-span-1 lg:col-span-5 row-span-1': index !== 0,
+                                'sm:col-span-2 lg:col-span-7 lg:row-span-4': index === 0,
+                                'sm:col-span-1 lg:col-span-5 lg:row-span-1': index !== 0,
                             })}
                         />
                     ))}

@@ -19,8 +19,6 @@ type Props = {
 const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, className = '' }) => {
     const { id, image, category, title, summary, authors, publish_date } = news;
 
-    // `/${category}/${id}`
-
     return (
         <Suspense fallback={<NewsCardSkeleton cardType={cardType} className={className} />}>
             <div

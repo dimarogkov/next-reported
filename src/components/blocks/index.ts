@@ -9,6 +9,7 @@ import NewsCol from './NewsCol';
 import NewsDetail from './NewsDetail';
 import NewsRow from './NewsRow';
 import PopularNews from './PopularNews';
+import Search from './Search';
 import Subscribe from './Subscribe';
 
 export {
@@ -23,5 +24,6 @@ export {
     NewsDetail,
     NewsRow,
     PopularNews,
+    Search,
     Subscribe,
 };

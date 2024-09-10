@@ -8,6 +8,12 @@ export const getNewsByCategory = async (category: string) => {
     return response.data;
 };
 
+export const getNewsWithParams = async (params: string) => {
+    const response = await axios.get<INews[]>(`${NEWS_URL}/all?${params}`);
+
+    return response.data;
+};
+
 export const getNewsById = async (newsId: string) => {
     const response = await axios.get<INews[]>(`${NEWS_URL}/all?id=${newsId}`);
 
