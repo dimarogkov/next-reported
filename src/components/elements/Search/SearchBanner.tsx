@@ -19,7 +19,9 @@ const SearchBanner: React.FC<Props> = ({ query, queryValue, className = '' }) =>
             className={`relative w-full text-center px-5 md:px-10 py-8 md:py-12 lg:py-16 rounded-md bg-gray mt-10 sm:mt-0 ${className}`}
         >
             <Title className='mb-3 lg:mb-5 last:mb-0'>Search</Title>
-            <Text>{`${fixedQuery}: ${queryValue}`}</Text>
+            <Text>
+                {fixedQuery}: <span className='italic'>{queryValue}</span>
+            </Text>
         </div>
     );
 };

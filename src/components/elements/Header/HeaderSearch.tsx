@@ -1,17 +1,15 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useHeader } from '@/src/store/header';
 import { EnumBtn } from '@/src/types/enums';
 
 import { Btn, Input, Label } from '../../ui';
 import { Search } from 'lucide-react';
 import cn from 'classnames';
 
-type Props = {
-    isSearchOpen: boolean;
-};
-
-const HeaderSearch: React.FC<Props> = ({ isSearchOpen }) => {
+const HeaderSearch = () => {
     const [searchValue, setSearchValue] = useState('');
+    const { isSearchOpen, closeMenu } = useHeader((state) => state);
     const inputRef = useRef<HTMLInputElement>(null);
     const router = useRouter();
 
@@ -25,7 +23,9 @@ const HeaderSearch: React.FC<Props> = ({ isSearchOpen }) => {
 
     const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        router.push(`/search?query=${searchValue.toLowerCase()}`);
+
+        router.push(`/search?title=${searchValue.trim().toLowerCase()}`);
+        closeMenu();
     };
 
     return (

@@ -1,11 +1,9 @@
+import { useHeader } from '@/src/store/header';
 import { Search, Menu } from 'lucide-react';
 
-type Props = {
-    toggleSearch: () => void;
-    toggleMenu: () => void;
-};
+const HeaderNavigation = () => {
+    const { toggleMenu, toggleSearch } = useHeader((state) => state);
 
-const HeaderNavigation: React.FC<Props> = ({ toggleSearch = () => {}, toggleMenu = () => {} }) => {
     return (
         <div className='flex items-center justify-end gap-6 lg:gap-4 xl:gap-8 lg:min-w-52 xl:min-w-60'>
             <button

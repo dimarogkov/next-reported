@@ -1,7 +1,9 @@
 import { useQuery } from '@tanstack/react-query';
 import { getNewsWithParams } from '@/src/services/news';
 import { EnumCard } from '@/src/types/enums';
+
 import { NewsCard, NewsCardSkeleton } from '../NewsCard';
+import SearchNotFound from './SearchNotFound';
 
 type Props = {
     params: string;
@@ -19,6 +21,8 @@ const SearchResults: React.FC<Props> = ({ params, className = '' }) => {
         <section className={`relative grid md:grid-cols-2 xl:grid-cols-3 gap-5 w-full ${className}`}>
             {isLoading &&
                 [0, 1, 2, 3, 4, 5].map((skeleton) => <NewsCardSkeleton cardType={EnumCard.large} key={skeleton} />)}
+
+            {!isLoading && !newsArr && <SearchNotFound />}
 
             {newsArr &&
                 newsArr.map((news) => (

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { useHeader } from '@/src/store/header';
 import { menu } from '@/src/variables/menu';
 
 import Logo from '../Logo';
@@ -9,11 +10,10 @@ import cn from 'classnames';
 
 type Props = {
     pathname: string;
-    isMenuOpen: boolean;
-    closeMenu: () => void;
 };
 
-const HeaderDrawer: React.FC<Props> = ({ pathname, isMenuOpen, closeMenu = () => {} }) => {
+const HeaderDrawer: React.FC<Props> = ({ pathname }) => {
+    const { isMenuOpen, closeMenu } = useHeader((state) => state);
     const { deskMenu, burgerMenu } = menu;
 
     return (
