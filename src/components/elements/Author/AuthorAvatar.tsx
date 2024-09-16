@@ -32,7 +32,7 @@ const AuthorAvatar: React.FC<Props> = ({ type, author }) => {
 
                 {avatar && (
                     <Link
-                        href={author}
+                        href={`authors/${author}`}
                         dangerouslySetInnerHTML={{ __html: avatar }}
                         className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-all duration-300 hover:scale-110 hover:brightness-90'
                     />

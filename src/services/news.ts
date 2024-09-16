@@ -1,21 +1,21 @@
 import axios from 'axios';
-import { NEWS_URL } from '../variables';
+import { API_URL } from '../variables';
 import { INews } from '../types/interfaces/News';
 
 export const getNewsByCategory = async (category: string) => {
-    const response = await axios.get<INews[]>(`${NEWS_URL}/all?category=${category}`);
+    const response = await axios.get<INews[]>(`${API_URL}/all?category=${category}`);
 
     return response.data;
 };
 
 export const getNewsWithParams = async (params: string) => {
-    const response = await axios.get<INews[]>(`${NEWS_URL}/all?${params}`);
+    const response = await axios.get<INews[]>(`${API_URL}/all?${params}`);
 
     return response.data;
 };
 
 export const getNewsById = async (newsId: string) => {
-    const response = await axios.get<INews[]>(`${NEWS_URL}/all?id=${newsId}`);
+    const response = await axios.get<INews[]>(`${API_URL}/all?id=${newsId}`);
 
     return response.data[0];
 };

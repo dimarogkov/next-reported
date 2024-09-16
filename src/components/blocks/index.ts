@@ -11,6 +11,7 @@ import NewsRow from './NewsRow';
 import PopularNews from './PopularNews';
 import Search from './Search';
 import Subscribe from './Subscribe';
+import TopAuthors from './TopAuthors';
 
 export {
     Breadcrumbs,
@@ -26,4 +27,5 @@ export {
     PopularNews,
     Search,
     Subscribe,
+    TopAuthors,
 };
