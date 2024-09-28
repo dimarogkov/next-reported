@@ -1,3 +1,4 @@
+import Authors from './Authors';
 import Breadcrumbs from './Breadcrumb';
 import Categories from './Categories';
 import CategoryNews from './CategoryNews';
@@ -14,6 +15,7 @@ import Subscribe from './Subscribe';
 import TopAuthors from './TopAuthors';
 
 export {
+    Authors,
     Breadcrumbs,
     Categories,
     CategoryNews,

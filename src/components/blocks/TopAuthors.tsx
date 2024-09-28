@@ -1,7 +1,8 @@
 import { getTopAuthors } from '@/src/services/authors';
-import { BtnLink, Subtitle } from '../ui';
-import { TopAuthorCard } from '../elements';
 import { EnumBtn } from '@/src/types/enums';
+
+import { AuthorCard } from '../elements';
+import { BtnLink, Subtitle } from '../ui';
 
 type Props = {
     className?: string;
@@ -22,7 +23,7 @@ const TopAuthors: React.FC<Props> = async ({ className = '' }) => {
 
             <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 sm:gap-6 xl:gap-8 w-full'>
                 {authors.map((author) => (
-                    <TopAuthorCard author={author} key={author.id} />
+                    <AuthorCard author={author} key={author.id} />
                 ))}
             </div>
         </section>

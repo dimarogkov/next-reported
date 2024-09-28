@@ -9,7 +9,7 @@ type Props = {
     author: IAuthor;
 };
 
-const TopAuthorCard: React.FC<Props> = ({ author }) => {
+const AuthorCard: React.FC<Props> = ({ author }) => {
     const { name, position } = author;
 
     return (
@@ -31,4 +31,4 @@ const TopAuthorCard: React.FC<Props> = ({ author }) => {
     );
 };
 
-export default TopAuthorCard;
+export default AuthorCard;
