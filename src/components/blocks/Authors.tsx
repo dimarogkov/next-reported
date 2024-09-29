@@ -1,6 +1,6 @@
 import { getAuthors } from '@/src/services/authors';
-import { Title } from '../ui';
 import { AuthorCard } from '../elements';
+import { Title } from '../ui';
 
 type Props = {
     className?: string;

@@ -10,9 +10,10 @@ import cn from 'classnames';
 type Props = {
     type: string;
     author: string;
+    className?: string;
 };
 
-const AuthorAvatar: React.FC<Props> = ({ type, author }) => {
+const AuthorAvatar: React.FC<Props> = ({ type, author, className = '' }) => {
     const { data: avatar, isLoading } = useQuery({
         queryFn: () => getAvatar(author),
         select: (data) => data.data,
@@ -22,7 +23,7 @@ const AuthorAvatar: React.FC<Props> = ({ type, author }) => {
 
     return (
         <div
-            className={cn('avatar placeholder', {
+            className={cn(`avatar placeholder ${className}`, {
                 'w-10 h-10 border-2': type === EnumAuthorInfo.light,
                 'w-11 h-11': type === EnumAuthorInfo.dark,
             })}
@@ -32,7 +33,7 @@ const AuthorAvatar: React.FC<Props> = ({ type, author }) => {
 
                 {avatar && (
                     <Link
-                        href={`authors/${author}`}
+                        href={`/authors/${author}`}
                         dangerouslySetInnerHTML={{ __html: avatar }}
                         className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-all duration-300 hover:scale-110 hover:brightness-90'
                     />

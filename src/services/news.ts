@@ -19,3 +19,9 @@ export const getNewsById = async (newsId: string) => {
 
     return response.data[0];
 };
+
+export const getNewsByAuthor = async (authorName: string) => {
+    const response = await axios.get<INews[]>(`${API_URL}/all?authors=${authorName}`);
+
+    return response.data;
+};

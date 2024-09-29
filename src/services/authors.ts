@@ -14,3 +14,9 @@ export const getTopAuthors = async (count: number) => {
 
     return authors.sort((a, b) => b.news.length - a.news.length).slice(0, count);
 };
+
+export const getAuthorByName = async (name: string) => {
+    const response = await axios.get<IAuthor[]>(`${API_URL}/authors?name=${name}`);
+
+    return response.data[0];
+};

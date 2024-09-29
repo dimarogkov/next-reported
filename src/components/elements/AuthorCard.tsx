@@ -20,7 +20,7 @@ const AuthorCard: React.FC<Props> = ({ author }) => {
 
             <div className='w-full text-center'>
                 <Text textSize={EnumText.large} className='text-red line-clamp-1 hover:underline'>
-                    <Link href={`authors/${name}`}>{name}</Link>
+                    <Link href={`/authors/${name}`}>{name}</Link>
                 </Text>
 
                 <Text textSize={EnumText.small} className='line-clamp-1'>

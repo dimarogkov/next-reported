@@ -3,7 +3,7 @@ import { capitalizeFirstLetter } from '@/src/helpers';
 import { getNewsById } from '@/src/services/news';
 import { menu } from '@/src/variables/menu';
 
-import { Breadcrumbs, Categories, NewsCol, NewsDetail, NewsRow, Subscribe } from '@/src/components/blocks';
+import { Breadcrumbs, Categories, NewsCol, NewsDetail, NewsRow, Subscribe, TopAuthors } from '@/src/components/blocks';
 
 type Props = {
     params: {
@@ -41,6 +41,8 @@ const NewsDetailPage: React.FC<Props> = async ({ params }) => {
             </NewsRow>
 
             <Categories className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
+
+            <TopAuthors className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 
             <Subscribe className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
         </>

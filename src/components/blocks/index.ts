@@ -1,3 +1,5 @@
+import AuthorBanner from './AuthorBanner';
+import AuthorNews from './AuthorNews';
 import Authors from './Authors';
 import Breadcrumbs from './Breadcrumb';
 import Categories from './Categories';
@@ -15,6 +17,8 @@ import Subscribe from './Subscribe';
 import TopAuthors from './TopAuthors';
 
 export {
+    AuthorBanner,
+    AuthorNews,
     Authors,
     Breadcrumbs,
     Categories,

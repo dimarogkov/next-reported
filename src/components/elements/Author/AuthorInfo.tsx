@@ -49,7 +49,7 @@ const AuthorInfo: React.FC<Props> = ({ type = EnumAuthorInfo.dark, authors }) =>
                     index !== authors.length - 1 ? (
                         <span key={author}>
                             <Link
-                                href={`authors/${author}`}
+                                href={`/authors/${author}`}
                                 className={cn('hover:underline', {
                                     'text-red ': type === EnumAuthorInfo.dark,
                                     'text-gray ': type === EnumAuthorInfo.light,
@@ -62,7 +62,7 @@ const AuthorInfo: React.FC<Props> = ({ type = EnumAuthorInfo.dark, authors }) =>
                     ) : (
                         <span key={author}>
                             <Link
-                                href={`authors/${author}`}
+                                href={`/authors/${author}`}
                                 className={cn('hover:underline', {
                                     'text-red ': type === EnumAuthorInfo.dark,
                                     'text-gray ': type === EnumAuthorInfo.light,
