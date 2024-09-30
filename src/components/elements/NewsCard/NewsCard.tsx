@@ -22,13 +22,13 @@ const NewsCard: React.FC<Props> = ({ news, cardType = EnumCard.default, classNam
     return (
         <Suspense fallback={<NewsCardSkeleton cardType={cardType} className={className} />}>
             <div
-                className={cn(`relative cursor-pointer ${className}`, {
+                className={cn(`relative group ${className}`, {
                     'lg:flex lg:flex-col w-full': cardType === EnumCard.large,
                     'lg:flex lg:items-center lg:justify-between w-full': cardType === EnumCard.small,
                     'w-full block': cardType === EnumCard.default,
                 })}
             >
-                <NewsCardImg type={cardType} href={`/${category}/${id}`} src={image} alt={title} />
+                <NewsCardImg type={cardType} src={image} alt={title} />
 
                 <div
                     className={cn('w-full', {
