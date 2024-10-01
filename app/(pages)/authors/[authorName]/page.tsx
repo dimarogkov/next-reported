@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { getNewsByAuthor } from '@/src/services/news';
 import { getAuthorByName } from '@/src/services/authors';
+import { getFixedName } from '@/src/helpers';
 
 import { AuthorBanner, AuthorNews, Breadcrumbs, Categories, Subscribe, TopAuthors } from '@/src/components/blocks';
 
@@ -11,7 +12,7 @@ type Props = {
 };
 
 export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
-    const authorName = params.authorName.replaceAll('%20', ' ');
+    const authorName = getFixedName(params.authorName);
 
     return {
         title: authorName,
@@ -21,7 +22,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 const AuthorDetailPage: React.FC<Props> = async ({ params }) => {
     const newsArr = await getNewsByAuthor(params.authorName);
     const author = await getAuthorByName(params.authorName);
-    const authorName = params.authorName.replaceAll('%20', ' ');
+    const authorName = getFixedName(params.authorName);
 
     return (
         <>

@@ -1,6 +1,6 @@
 'use client';
 import Link from 'next/link';
-import { capitalizeFirstLetter } from '@/src/helpers';
+import { capitalizeFirstLetter, getFixedName } from '@/src/helpers';
 import { usePathname } from 'next/navigation';
 
 import { Text } from '../ui';
@@ -19,7 +19,7 @@ const Breadcrumbs: React.FC<Props> = ({ className = '' }) => {
         .map((path, index, arr) => ({
             id: index + 1,
             href: `/${arr.slice(0, index + 1).join('/')}`,
-            text: capitalizeFirstLetter(path.replaceAll('%20', ' ')),
+            text: capitalizeFirstLetter(getFixedName(path)),
         }));
 
     return (

@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { EnumAuthorInfo, EnumText } from '@/src/types/enums';
 import { IAuthor } from '@/src/types/interfaces/Author';
 
-import { AuthorAvatar } from './Author';
-import { Text } from '../ui';
+import { AuthorAvatar } from '.';
+import { Text } from '../../ui';
 
 type Props = {
     author: IAuthor;
