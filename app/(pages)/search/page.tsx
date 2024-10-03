@@ -12,7 +12,7 @@ const SearchPage = () => {
             <Breadcrumbs className='my-6 xl:my-8' />
 
             <Suspense>
-                <Search className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
+                <Search className='mb-10 sm:mb-12' />
             </Suspense>
 
             <Categories className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />

@@ -4,15 +4,15 @@ import { useAuthor } from '@/src/store/author';
 import { IAuthor } from '@/src/types/interfaces/Author';
 
 import AuthorCard from './AuthorCard';
+import { Pagination } from '../Pagination';
 import { Text } from '../../ui';
 
 type Props = {
     authors: IAuthor[];
-    className?: string;
 };
 
-const AuthorList: React.FC<Props> = ({ authors, className = '' }) => {
-    const { currentPage, setCurrentPage, itemsPerPage, searchValue } = useAuthor((state) => state);
+const AuthorList: React.FC<Props> = ({ authors }) => {
+    const { currentPage, itemsPerPage, setCurrentPage, searchValue } = useAuthor((state) => state);
 
     useEffect(() => {
         return () => setCurrentPage(1);
@@ -37,14 +37,19 @@ const AuthorList: React.FC<Props> = ({ authors, className = '' }) => {
             )}
 
             {filteredAuthors.length > 0 && (
-                <div
-                    className={`grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 sm:gap-6 xl:gap-8 w-full ${className}`}
-                >
+                <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-5 sm:gap-6 xl:gap-8 w-full mb-8 md:mb-10 lg:mb-12 last:mb-0'>
                     {filteredAuthors.map((author) => (
                         <AuthorCard author={author} key={`${author.name}_${author.id}`} />
                     ))}
                 </div>
             )}
+
+            <Pagination
+                itemsLength={authors.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
         </>
     );
 };

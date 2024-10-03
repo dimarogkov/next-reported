@@ -1,9 +1,8 @@
 import { capitalizeFirstLetter } from '@/src/helpers';
 import { getNewsByCategory } from '@/src/services/news';
-import { EnumCard, EnumSubscribe } from '@/src/types/enums';
+import { EnumSubscribe } from '@/src/types/enums';
 
-import { NewsCard } from '../elements/NewsCard';
-import { CategoryList } from '../elements';
+import { CategoryList, CategoryNewsList } from '../elements';
 import Subscribe from './Subscribe';
 import { Title } from '../ui';
 
@@ -23,11 +22,7 @@ const CategoryNews: React.FC<Props> = async ({ category, className = '' }) => {
             </div>
 
             <div className='lg:flex lg:items-start lg:justify-between w-full'>
-                <div className='grid sm:grid-cols-2 gap-5 lg:gap-6 w-full lg:w-[67%] xl:w-[70%] mb-10 sm:mb-12 lg:mb-0 last:mb-0'>
-                    {newsArr.map((news) => (
-                        <NewsCard news={news} cardType={EnumCard.large} key={news.id} />
-                    ))}
-                </div>
+                <CategoryNewsList newsArr={newsArr} className='mb-10 sm:mb-12 lg:mb-0 last:mb-0' />
 
                 <div className='sm:sticky sm:top-24 lg:top-28 w-full lg:w-[30%] xl:w-[25%]'>
                     <CategoryList className='mb-10 sm:mb-12 last:mb-0' />
