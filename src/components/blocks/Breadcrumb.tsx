@@ -17,7 +17,7 @@ const Breadcrumbs: React.FC<Props> = ({ className = '' }) => {
         .split('/')
         .filter((path) => path)
         .map((path, index, arr) => ({
-            id: index + 1,
+            id: crypto.randomUUID(),
             href: `/${arr.slice(0, index + 1).join('/')}`,
             text: capitalizeFirstLetter(getFixedName(path)),
         }));
@@ -33,10 +33,10 @@ const Breadcrumbs: React.FC<Props> = ({ className = '' }) => {
 
                 <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />
 
-                {pathNames.map(({ id, href, text }) => (
+                {pathNames.map(({ id, href, text }, index) => (
                     <>
                         <li key={id}>
-                            {pathNames.length !== id ? (
+                            {pathNames.length - 1 !== index ? (
                                 <Link href={href} className='line-clamp-1 hover:underline'>
                                     {text}
                                 </Link>
@@ -45,7 +45,9 @@ const Breadcrumbs: React.FC<Props> = ({ className = '' }) => {
                             )}
                         </li>
 
-                        {pathNames.length !== id && <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />}
+                        {pathNames.length - 1 !== index && (
+                            <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />
+                        )}
                     </>
                 ))}
             </ul>

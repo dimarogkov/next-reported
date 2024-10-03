@@ -1,5 +1,7 @@
 import { getAuthors } from '@/src/services/authors';
 import { AuthorList, AuthorSearch } from '../elements/Author';
+
+import { Pagination } from '../elements/Pagination';
 import { Title } from '../ui';
 
 type Props = {
@@ -16,7 +18,9 @@ const Authors: React.FC<Props> = async ({ className = '' }) => {
                 <AuthorSearch />
             </div>
 
-            <AuthorList authors={authors} />
+            <AuthorList authors={authors} className='mb-6 sm:mb-8 lg:mb-10 last:mb-0' />
+
+            <Pagination itemsLength={authors.length} />
         </section>
     );
 };
