@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useMemo } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useAuthor } from '@/src/store/author';
 import { IAuthor } from '@/src/types/interfaces/Author';
 
@@ -13,10 +13,13 @@ type Props = {
 
 const AuthorList: React.FC<Props> = ({ authors }) => {
     const { currentPage, itemsPerPage, setCurrentPage, searchValue } = useAuthor((state) => state);
+    const [authorsLength, setAuthorsLength] = useState(authors.length);
 
     useEffect(() => {
+        setCurrentPage(1);
+
         return () => setCurrentPage(1);
-    }, [setCurrentPage]);
+    }, [setCurrentPage, searchValue]);
 
     const filteredAuthors = useMemo(() => {
         const startItemNumber = currentPage * itemsPerPage - itemsPerPage;
@@ -27,6 +30,7 @@ const AuthorList: React.FC<Props> = ({ authors }) => {
             arr = arr.filter(({ name }) => name.toLowerCase().includes(searchValue.toLowerCase()));
         }
 
+        setAuthorsLength(arr.length);
         return arr.slice(startItemNumber, endItemNumber);
     }, [authors, currentPage, itemsPerPage, searchValue]);
 
@@ -45,7 +49,7 @@ const AuthorList: React.FC<Props> = ({ authors }) => {
             )}
 
             <Pagination
-                itemsLength={authors.length}
+                itemsLength={authorsLength}
                 itemsPerPage={itemsPerPage}
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}
