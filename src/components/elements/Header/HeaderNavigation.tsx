@@ -19,17 +19,17 @@ const HeaderNavigation = () => {
                     onClick={toggleSearch}
                     className='outline-none text-black transition-colors duration-300 hover:text-red'
                 >
-                    <Search className='w-6 lg:w-7 h-6 lg:h-7 stroke-1' />
+                    <Search className='w-7 h-7 stroke-1' />
                 </button>
 
-                <span className='w-[1px] h-7 lg:h-8 bg-gray' />
+                <span className='w-[1px] h-8 bg-gray' />
 
                 <button
                     type='button'
                     onClick={toggleMenu}
                     className='outline-none text-black transition-colors duration-300 hover:text-red'
                 >
-                    <Menu className='w-7 lg:w-8 h-7 lg:h-8 stroke-1' />
+                    <Menu className='w-8 h-8 stroke-1' />
                 </button>
             </div>
         </div>

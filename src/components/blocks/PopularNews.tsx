@@ -39,7 +39,7 @@ const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopula
                         <NewsCard
                             news={news}
                             cardType={index === 0 ? EnumCard.large : EnumCard.default}
-                            key={news.id}
+                            key={crypto.randomUUID()}
                             className={cn({
                                 'sm:col-span-2 lg:col-span-6 lg:row-span-2': index === 0,
                                 'sm:col-span-1 lg:col-span-3 lg:row-span-1': index !== 0,
@@ -52,7 +52,7 @@ const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopula
                         <NewsCard
                             news={news}
                             cardType={index === 0 ? EnumCard.large : EnumCard.small}
-                            key={news.id}
+                            key={crypto.randomUUID()}
                             className={cn({
                                 'sm:col-span-2 lg:col-span-7 lg:row-span-4': index === 0,
                                 'sm:col-span-1 lg:col-span-5 lg:row-span-1': index !== 0,

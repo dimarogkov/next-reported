@@ -19,7 +19,7 @@ const NewsColList: React.FC<Props> = ({ title, category, newsArr }) => {
                     <NewsCard
                         news={news}
                         cardType={index === 0 ? EnumCard.default : EnumCard.small}
-                        key={news.id}
+                        key={crypto.randomUUID()}
                         className={cn({ 'flex-grow': index === 0 })}
                     />
                 ))}

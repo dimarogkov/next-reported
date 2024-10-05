@@ -46,13 +46,13 @@ const SearchResults: React.FC<Props> = ({ params, className = '' }) => {
                         <NewsCard
                             cardType={EnumCard.large}
                             news={news}
-                            key={news.id}
+                            key={crypto.randomUUID()}
                             className='md:flex md:flex-col w-full'
                         />
                     ))}
             </div>
 
-            {newsArr && newsArr.length > itemsPerPage && (
+            {newsArr && (
                 <Pagination
                     itemsLength={newsArr.length}
                     itemsPerPage={itemsPerPage}

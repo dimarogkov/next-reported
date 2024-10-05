@@ -30,18 +30,16 @@ const CategoryNewsList: React.FC<Props> = ({ newsArr, className = '' }) => {
         <div className={`relative w-full lg:w-[67%] xl:w-[70%] ${className}`}>
             <div className='grid sm:grid-cols-2 gap-5 lg:gap-6 w-full mb-8 md:mb-10 lg:mb-12 last:mb-0'>
                 {slicedNews.map((news) => (
-                    <NewsCard news={news} cardType={EnumCard.large} key={news.id} />
+                    <NewsCard news={news} cardType={EnumCard.large} key={crypto.randomUUID()} />
                 ))}
             </div>
 
-            {newsArr.length > itemsPerPage && (
-                <Pagination
-                    itemsLength={newsArr.length}
-                    itemsPerPage={itemsPerPage}
-                    currentPage={currentPage}
-                    setCurrentPage={setCurrentPage}
-                />
-            )}
+            <Pagination
+                itemsLength={newsArr.length}
+                itemsPerPage={itemsPerPage}
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+            />
         </div>
     );
 };
