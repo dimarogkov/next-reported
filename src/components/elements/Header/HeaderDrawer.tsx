@@ -44,7 +44,7 @@ const HeaderDrawer: React.FC<Props> = ({ pathname }) => {
 
                     <Logo className='mb-3 lg:mb-4 last:mb-0' />
 
-                    <Text className='mb-3 lg:mb-4 last:mb-0'>
+                    <Text className='mb-3 sm:mb-0 last:mb-0'>
                         A reporter gathers, investigates, and presents news and current events through various media
                         platforms.
                     </Text>
