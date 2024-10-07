@@ -2,11 +2,12 @@ import { useHeader } from '@/src/store/header';
 import { Search, Menu } from 'lucide-react';
 
 const HeaderNavigation = () => {
-    const { toggleMenu, toggleSearch } = useHeader((state) => state);
+    const { setIsSubscribeOpen, toggleMenu, toggleSearch } = useHeader((state) => state);
 
     return (
         <div className='flex items-center justify-end gap-6 lg:gap-4 xl:gap-8 lg:min-w-52 xl:min-w-60'>
             <button
+                onClick={() => setIsSubscribeOpen(true)}
                 type='button'
                 className='hidden sm:flex items-center h-9 lg:h-10 font-medium text-sm text-black px-4 lg:px-5 rounded outline-none border border-black transition-colors duration-300 hover:bg-black hover:text-white'
             >

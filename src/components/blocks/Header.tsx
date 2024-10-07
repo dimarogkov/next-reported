@@ -3,7 +3,15 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { useHeader } from '@/src/store/header';
 
-import { HeaderDrawer, HeaderLayer, HeaderMenu, HeaderNavigation, HeaderSearch } from '../elements/Header';
+import {
+    HeaderDrawer,
+    HeaderLayer,
+    HeaderMenu,
+    HeaderNavigation,
+    HeaderSearch,
+    HeaderSubscribe,
+} from '../elements/Header';
+
 import { Logo } from '../elements';
 
 type Props = {
@@ -11,12 +19,12 @@ type Props = {
 };
 
 const Header: React.FC<Props> = ({ setIsBodyLock }) => {
-    const { isMenuOpen, isSearchOpen, closeMenu } = useHeader((state) => state);
+    const { isMenuOpen, isSearchOpen, isSubscribeOpen, closeMenu } = useHeader((state) => state);
     const pathname = usePathname();
 
     useEffect(() => {
-        setIsBodyLock(isMenuOpen || isSearchOpen);
-    }, [isMenuOpen, isSearchOpen, setIsBodyLock]);
+        setIsBodyLock(isMenuOpen || isSearchOpen || isSubscribeOpen);
+    }, [isMenuOpen, isSearchOpen, isSubscribeOpen, setIsBodyLock]);
 
     useEffect(() => {
         closeMenu();
@@ -34,6 +42,7 @@ const Header: React.FC<Props> = ({ setIsBodyLock }) => {
 
             <HeaderLayer />
             <HeaderDrawer pathname={pathname} />
+            <HeaderSubscribe />
             <HeaderSearch />
         </header>
     );

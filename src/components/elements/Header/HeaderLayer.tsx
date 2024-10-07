@@ -2,8 +2,8 @@ import { useHeader } from '@/src/store/header';
 import cn from 'classnames';
 
 const HeaderLayer = () => {
-    const { isMenuOpen, isSearchOpen, closeMenu } = useHeader((state) => state);
-    const isVisible = isMenuOpen || isSearchOpen;
+    const { isSubscribeOpen, isMenuOpen, isSearchOpen, closeMenu } = useHeader((state) => state);
+    const isVisible = isSubscribeOpen || isMenuOpen || isSearchOpen;
 
     return (
         <div

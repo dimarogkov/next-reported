@@ -31,7 +31,7 @@ const HeaderSearch = () => {
     return (
         <div
             className={cn(
-                'fixed z-10 top-0 lg:top-0 left-0 flex items-center w-full h-32 sm:h-16 lg:h-20 border-b border-gray bg-white transition-all duration-300',
+                'fixed z-10 top-0 left-0 flex items-center w-full h-32 sm:h-16 lg:h-20 border-b border-gray bg-white transition-all duration-300',
                 {
                     '-translate-y-32 sm:-translate-y-16 lg:-translate-y-20': !isSearchOpen,
                     'translate-y-0': isSearchOpen,

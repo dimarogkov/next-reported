@@ -1,20 +1,26 @@
 import Link from 'next/link';
 import { useHeader } from '@/src/store/header';
 import { menu } from '@/src/variables/menu';
+import { EnumBtn } from '@/src/types/enums';
 
 import Logo from '../Logo';
 import Socials from '../Socials';
-import { Text } from '../../ui';
+import { Btn, Text } from '../../ui';
 import { X } from 'lucide-react';
 import cn from 'classnames';
+import { useEffect } from 'react';
 
 type Props = {
     pathname: string;
 };
 
 const HeaderDrawer: React.FC<Props> = ({ pathname }) => {
-    const { isMenuOpen, closeMenu } = useHeader((state) => state);
+    const { isMenuOpen, isSubscribeOpen, setIsMenuOpen, setIsSubscribeOpen, closeMenu } = useHeader((state) => state);
     const { deskMenu, burgerMenu } = menu;
+
+    useEffect(() => {
+        setIsMenuOpen(false);
+    }, [isSubscribeOpen, setIsMenuOpen]);
 
     return (
         <div
@@ -38,10 +44,14 @@ const HeaderDrawer: React.FC<Props> = ({ pathname }) => {
 
                     <Logo className='mb-3 lg:mb-4 last:mb-0' />
 
-                    <Text>
+                    <Text className='mb-3 lg:mb-4 last:mb-0'>
                         A reporter gathers, investigates, and presents news and current events through various media
                         platforms.
                     </Text>
+
+                    <Btn onClick={() => setIsSubscribeOpen(true)} btnType={EnumBtn.dark} className='w-full'>
+                        Subscribe
+                    </Btn>
                 </div>
 
                 <ul className='flex sm:block flex-col flex-grow items-center justify-center w-full p-6 lg:p-10'>
