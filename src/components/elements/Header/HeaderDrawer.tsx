@@ -49,7 +49,7 @@ const HeaderDrawer: React.FC<Props> = ({ pathname }) => {
                         platforms.
                     </Text>
 
-                    <Btn onClick={() => setIsSubscribeOpen(true)} btnType={EnumBtn.dark} className='w-full'>
+                    <Btn onClick={() => setIsSubscribeOpen(true)} btnType={EnumBtn.dark} className='sm:hidden w-full'>
                         Subscribe
                     </Btn>
                 </div>
