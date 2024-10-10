@@ -1,9 +1,11 @@
 import AuthorBanner from './AuthorBanner';
 import AuthorNews from './AuthorNews';
 import Authors from './Authors';
+import Banner from './Banner';
 import Breadcrumbs from './Breadcrumb';
 import Categories from './Categories';
 import CategoryNews from './CategoryNews';
+import ContactInfo from './ContactInfo';
 import CtyBanner from './CtyBanner';
 import Footer from './Footer';
 import Header from './Header';
@@ -20,9 +22,11 @@ export {
     AuthorBanner,
     AuthorNews,
     Authors,
+    Banner,
     Breadcrumbs,
     Categories,
     CategoryNews,
+    ContactInfo,
     CtyBanner,
     Footer,
     Header,
