@@ -5,6 +5,7 @@ import Banner from './Banner';
 import Breadcrumbs from './Breadcrumb';
 import Categories from './Categories';
 import CategoryNews from './CategoryNews';
+import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
 import CtyBanner from './CtyBanner';
 import Footer from './Footer';
@@ -26,6 +27,7 @@ export {
     Breadcrumbs,
     Categories,
     CategoryNews,
+    ContactForm,
     ContactInfo,
     CtyBanner,
     Footer,
