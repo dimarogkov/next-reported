@@ -17,7 +17,7 @@ const ContactInfoCard: React.FC<Props> = ({ info }) => {
             <div className='w-full'>
                 <Subtitle className='text-red mb-1 md:mb-2 last:mb-0'>{title}</Subtitle>
 
-                <Text className='w-full'>
+                <Text className='w-full lg:max-w-[80%] m-auto'>
                     {textArr.map(({ id, hrefPart, text, isLink }) =>
                         isLink ? (
                             <p key={id}>

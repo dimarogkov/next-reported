@@ -42,6 +42,7 @@ const HeaderSearch = () => {
                 <form className='flex flex-wrap sm:flex-nowrap gap-3 sm:gap-4 w-full' onSubmit={handleSubmit}>
                     <Label className='flex items-center'>
                         <Search className='absolute z-10 left-2 w-5 lg:w-6 h-5 lg:h-6 stroke-1 text-black/50' />
+
                         <Input
                             ref={inputRef}
                             name='search'

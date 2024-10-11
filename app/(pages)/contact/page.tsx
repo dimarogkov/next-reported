@@ -14,7 +14,7 @@ const ContactPage = () => {
 
             <ContactInfo className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 
-            {/* <ContactForm className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' /> */}
+            <ContactForm className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 
             <Subscribe className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
         </>
