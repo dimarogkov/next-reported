@@ -21,7 +21,14 @@ const ContactForm: React.FC<Props> = ({ className = '' }) => {
                 <GetInTouchForm />
             </div>
 
-            <div className='w-full h-64 sm:h-80 md:h-full row-start-1 md:row-start-auto rounded-lg skeleton'></div>
+            <div className='relative w-full h-64 sm:h-80 md:h-full row-start-1 md:row-start-auto rounded-lg'>
+                <iframe
+                    width='100%'
+                    height='600'
+                    className='absolute top-0 left-0 w-full h-full'
+                    src='https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=93X%20Hilgard%20Ave,%20Los%20Angeles,%20CA%20900XX,%20United%20States+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed'
+                />
+            </div>
         </section>
     );
 };
