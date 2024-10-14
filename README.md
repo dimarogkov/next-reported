@@ -19,7 +19,9 @@
         -   elements
         -   root
         -   ui
+    -   helpers
     -   services
+    -   store
     -   types
         -   enums
         -   interfaces
