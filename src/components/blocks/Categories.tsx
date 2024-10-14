@@ -11,7 +11,7 @@ const Categories: React.FC<Props> = ({ className = '' }) => {
 
     return (
         <section className={`relative w-full ${className}`}>
-            <Subtitle className='mb-5 last:mb-0'>Explore by Categories</Subtitle>
+            <Subtitle className='mb-4 sm:mb-5 lg:mb-6 last:mb-0'>Explore by Categories</Subtitle>
 
             <div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 xl:gap-5 w-full'>
                 {deskMenu.map((category) => (

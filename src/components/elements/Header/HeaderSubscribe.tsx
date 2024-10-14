@@ -1,5 +1,5 @@
 import { useHeader } from '@/src/store/header';
-import { EnumBtn } from '@/src/types/enums';
+import { EnumBtn, EnumSubtitle } from '@/src/types/enums';
 
 import { Btn, Input, Label, Subtitle, Text } from '../../ui';
 import { Mail, X } from 'lucide-react';
@@ -27,7 +27,10 @@ const HeaderSubscribe = () => {
             </button>
 
             <div className='w-full mb-5 last:mb-0'>
-                <Subtitle className='text-red mb-1 sm:mb-2 last:mb-0'>Subscribe Our Newsletter</Subtitle>
+                <Subtitle subType={EnumSubtitle.h3} className='text-red mb-1 sm:mb-2 last:mb-0'>
+                    Subscribe Our Newsletter
+                </Subtitle>
+
                 <Text>Stay updated with the latest news and exclusive content by subscribing to our newsletter.</Text>
             </div>
 

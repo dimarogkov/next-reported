@@ -19,7 +19,7 @@ const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopula
     return (
         <section className={`relative w-full ${className}`}>
             {title && (
-                <div className='flex items-center justify-between w-full pb-2 border-b-2 border-black mb-4 xl:mb-5 last:mb-0'>
+                <div className='flex items-center justify-between w-full pb-2 sm:pb-3 border-b-2 border-black mb-4 sm:mb-5 lg:mb-6 last:mb-0'>
                     <Subtitle className='block sm:max-w-[60%]'>{title}</Subtitle>
 
                     <BtnLink href={`/${category}`} btnType={EnumBtn.darkWithIcon} className='hidden sm:flex'>

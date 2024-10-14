@@ -13,7 +13,7 @@ const Search: React.FC<Props> = ({ className = '' }) => {
 
     return (
         <>
-            <SearchBanner query={queryKey} queryValue={queryParams[queryKey]} className={className} />
+            <SearchBanner query={queryKey} queryValue={queryParams[queryKey]} className='mb-10 sm:mb-12 mt-6 sm:mt-0' />
 
             <SearchResults params={`${queryKey}=${queryParams[queryKey]}`} className={className} />
         </>

@@ -30,7 +30,7 @@ const AuthorNews: React.FC<Props> = ({ author, newsArr, className = '' }) => {
 
     return (
         <section className={`relative w-full ${className}`}>
-            <div className='w-full pb-2 sm:pb-3 md:pb-4 lg:pb-5 border-b-2 border-black mb-6 sm:mb-8 lg:mb-10 last:mb-0'>
+            <div className='w-full pb-2 sm:pb-3 border-b-2 border-black mb-4 sm:mb-5 lg:mb-6 last:mb-0'>
                 <Subtitle>News by {author}</Subtitle>
             </div>
 

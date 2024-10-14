@@ -1,4 +1,6 @@
 import { getNewsByCategory } from '@/src/services/news';
+import { EnumSubtitle } from '@/src/types/enums';
+
 import { NewsColList } from '../elements';
 import { Subtitle } from '../ui';
 
@@ -12,7 +14,11 @@ const NewsCol: React.FC<Props> = async ({ title, category }) => {
 
     return (
         <div className='relative flex flex-col w-full'>
-            {title && <Subtitle className='pb-2 border-b-2 border-black mb-4 xl:mb-5 last:mb-0'>{title}</Subtitle>}
+            {title && (
+                <Subtitle subType={EnumSubtitle.h3} className='pb-2 border-b-2 border-black mb-4 xl:mb-5 last:mb-0'>
+                    {title}
+                </Subtitle>
+            )}
 
             <NewsColList title={title} category={category} newsArr={newsArr} />
         </div>

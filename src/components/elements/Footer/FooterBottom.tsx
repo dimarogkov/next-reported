@@ -7,7 +7,7 @@ const FooterBottom = () => {
     return (
         <div className='w-full p-4 sm:p-5 border-t border-white/40 text-white/80'>
             <div className='flex flex-wrap justify-between w-full text-center md:text-left max-w-screen-2xl m-auto'>
-                <Text textSize={EnumText.small} className='w-full md:w-auto mb-2.5 last:mb-0'>
+                <Text textSize={EnumText.small} className='w-full md:w-auto mb-2.5 md:mb-0 last:mb-0'>
                     <span>Design by </span>
                     <Link href='/' className='underline'>
                         {PROJECT_NAME}

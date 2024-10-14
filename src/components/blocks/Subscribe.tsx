@@ -1,4 +1,4 @@
-import { EnumBtn, EnumSubscribe } from '@/src/types/enums';
+import { EnumBtn, EnumSubscribe, EnumSubtitle } from '@/src/types/enums';
 import { Btn, Input, Label, Subtitle, Text } from '../ui';
 import { Mail } from 'lucide-react';
 import cn from 'classnames';
@@ -25,7 +25,9 @@ const Subscribe: React.FC<Props> = ({ type = EnumSubscribe.default, className = 
                     'md:w-[45%] lg:w-full lg:mb-5': type === EnumSubscribe.small,
                 })}
             >
-                <Subtitle className='mb-1 sm:mb-2 xl:mb-3 last:mb-0'>Subscribe Our Newsletter</Subtitle>
+                <Subtitle subType={EnumSubtitle.h3} className='mb-2 last:mb-0'>
+                    Subscribe Our Newsletter
+                </Subtitle>
 
                 <Text className={cn({ 'lg:hidden': type === EnumSubscribe.small })}>
                     Stay updated with the latest news and exclusive content by subscribing to our newsletter.

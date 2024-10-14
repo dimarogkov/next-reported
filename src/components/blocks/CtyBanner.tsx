@@ -1,4 +1,4 @@
-import { EnumBtn, EnumSocials } from '@/src/types/enums';
+import { EnumBtn, EnumSocials, EnumSubtitle } from '@/src/types/enums';
 import { BtnLink, Subtitle, Text } from '../ui';
 import { Socials } from '../elements';
 
@@ -12,7 +12,9 @@ const CtyBanner: React.FC<Props> = ({ className = '' }) => {
             className={`relative flex items-center w-full p-5 md:p-10 rounded-md overflow-hidden bg-red ${className}`}
         >
             <div className='w-full'>
-                <Subtitle className='text-white mb-3 xl:mb-4 last:mb-0'>Imagine your ad hear</Subtitle>
+                <Subtitle subType={EnumSubtitle.h3} className='text-white mb-3 last:mb-0'>
+                    Imagine your ad hear
+                </Subtitle>
 
                 <div className='flex flex-col-reverse lg:flex-row gap-5 lg:gap-10 w-full'>
                     <div className='w-full'>

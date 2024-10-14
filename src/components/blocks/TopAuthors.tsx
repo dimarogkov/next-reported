@@ -13,7 +13,7 @@ const TopAuthors: React.FC<Props> = async ({ className = '' }) => {
 
     return (
         <section className={`relative w-full ${className}`}>
-            <div className='flex items-center justify-between w-full pb-2 border-b-2 border-black mb-10 last:mb-0'>
+            <div className='flex items-center justify-between w-full pb-2 sm:pb-3 border-b-2 border-black mb-10 last:mb-0'>
                 <Subtitle className='block sm:max-w-[60%]'>Top Authors</Subtitle>
 
                 <BtnLink href={`/authors`} btnType={EnumBtn.darkWithIcon} className='hidden sm:flex'>

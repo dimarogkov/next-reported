@@ -1,3 +1,4 @@
+import { EnumSubtitle } from '@/src/types/enums';
 import { IContactInfo } from '@/src/types/interfaces/ContactInfo';
 import { Subtitle, Text } from '../ui';
 
@@ -15,7 +16,9 @@ const ContactInfoCard: React.FC<Props> = ({ info }) => {
             </div>
 
             <div className='w-full'>
-                <Subtitle className='text-red mb-1 md:mb-2 last:mb-0'>{title}</Subtitle>
+                <Subtitle subType={EnumSubtitle.h3} className='text-red mb-1 md:mb-2 last:mb-0'>
+                    {title}
+                </Subtitle>
 
                 <Text className='w-full lg:max-w-[80%] m-auto'>
                     {textArr.map(({ id, hrefPart, text, isLink }) =>

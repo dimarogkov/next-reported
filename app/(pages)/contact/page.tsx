@@ -10,7 +10,11 @@ const ContactPage = () => {
         <>
             <Breadcrumbs className='my-6 xl:my-8' />
 
-            <Banner title='Contact Us' className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-6 sm:mt-0' />
+            <Banner
+                title='Contact Us'
+                text='Have questions or suggestions? We’d love to hear from you! Share your feedback to help us improve your experience.'
+                className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-6 sm:mt-0'
+            />
 
             <ContactInfo className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 
