@@ -3,7 +3,7 @@ import { DEVELOPER_NAME, PROJECT_NAME } from '@/src/variables';
 import { EnumText } from '@/src/types/enums';
 import { Text } from '../../ui';
 
-const FooterBottom: React.FC = () => {
+const FooterBottom = () => {
     return (
         <div className='w-full p-4 sm:p-5 border-t border-white/40 text-white/80'>
             <div className='flex flex-wrap justify-between w-full text-center md:text-left max-w-screen-2xl m-auto'>
@@ -20,7 +20,7 @@ const FooterBottom: React.FC = () => {
                 </Text>
 
                 <Text textSize={EnumText.small} className='w-full md:w-auto'>
-                    Copyright © 2023 ${PROJECT_NAME}. All rights reserved.
+                    Copyright © 2023 {PROJECT_NAME}. All rights reserved.
                 </Text>
             </div>
         </div>

@@ -6,7 +6,7 @@ import Logo from '../Logo';
 import Socials from '../Socials';
 import { Text } from '../../ui';
 
-const FooterTop: React.FC = () => {
+const FooterTop = () => {
     const { deskMenu, burgerMenu } = menu;
 
     return (

@@ -1,6 +1,6 @@
 import { FooterBottom, FooterTop } from '../elements/Footer';
 
-const Footer: React.FC = () => {
+const Footer = () => {
     return (
         <footer className='relative w-full bg-[#000]'>
             <FooterTop />
