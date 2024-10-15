@@ -16,7 +16,7 @@ const Input: React.FC<Props> = forwardRef<HTMLInputElement, Props>(
             <input
                 ref={ref}
                 {...props}
-                className={`relative w-full h-10 lg:h-11 text-base px-5 rounded outline-none border border-gray bg-white transition-all duration-300 ${className}`}
+                className={`relative w-full h-10 lg:h-11 text-base px-5 rounded outline-none border border-gray bg-white focus:border-black transition-all duration-300 ${className}`}
                 {...register(registerName)}
             />
         );

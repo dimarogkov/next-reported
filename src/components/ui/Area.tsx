@@ -8,7 +8,7 @@ const Area: React.FC<Props> = forwardRef<HTMLTextAreaElement, Props>(({ classNam
     <textarea
         ref={ref}
         {...props}
-        className={`relative w-full h-36 text-base px-5 py-3 rounded outline-none resize-none border border-gray bg-white ${className}`}
+        className={`relative w-full h-36 text-base px-5 py-3 rounded outline-none resize-none border border-gray bg-white focus:border-black transition-all duration-300 ${className}`}
     />
 ));
 

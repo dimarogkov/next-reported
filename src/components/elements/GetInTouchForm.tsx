@@ -63,7 +63,9 @@ const GetInTouchForm = () => {
                     {errors.phone && <ErrorMessage>{errors.phone.message}</ErrorMessage>}
                 </Label>
 
-                <Area placeholder='Type Your Message' className='lg:col-span-2'></Area>
+                <Label className='w-full lg:col-span-2'>
+                    <Area placeholder='Type Your Message' />
+                </Label>
             </div>
 
             <Btn type='submit' btnType={EnumBtn.withIcon}>
