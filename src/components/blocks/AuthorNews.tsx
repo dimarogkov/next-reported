@@ -1,11 +1,11 @@
 'use client';
 import { useEffect, useMemo, useState } from 'react';
-import { EnumCard } from '@/src/types/enums';
+import { EnumCard, EnumTitle } from '@/src/types/enums';
 import { INews } from '@/src/types/interfaces/News';
 
 import { NewsCard } from '../elements/NewsCard';
 import { Pagination } from '../elements/Pagination';
-import { Subtitle } from '../ui';
+import { Title } from '../ui';
 
 type Props = {
     author: string;
@@ -31,7 +31,7 @@ const AuthorNews: React.FC<Props> = ({ author, newsArr, className = '' }) => {
     return (
         <section className={`relative w-full ${className}`}>
             <div className='w-full pb-2 sm:pb-3 border-b-2 border-black mb-4 sm:mb-5 lg:mb-6 last:mb-0'>
-                <Subtitle>News by {author}</Subtitle>
+                <Title titleType={EnumTitle.h3}>News by {author}</Title>
             </div>
 
             <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6 w-full mb-8 md:mb-10 lg:mb-12 last:mb-0'>

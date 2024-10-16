@@ -1,8 +1,8 @@
 import Link from 'next/link';
-import { EnumCard, EnumSubtitle, EnumText } from '@/src/types/enums';
+import { EnumCard, EnumText, EnumTitle } from '@/src/types/enums';
 
 import DateInfo from '../DateInfo';
-import { Subtitle, Text } from '../../ui';
+import { Text, Title } from '../../ui';
 import cn from 'classnames';
 
 type Props = {
@@ -35,11 +35,11 @@ const NewsCardContent: React.FC<Props> = ({ type, href, title, summary, date, cl
 
             {type === EnumCard.large && (
                 <>
-                    <Subtitle subType={EnumSubtitle.h3} className='sm:line-clamp-2 mb-3 last:mb-0'>
+                    <Title titleType={EnumTitle.h3} className='sm:line-clamp-2 mb-3 last:mb-0'>
                         <Link href={href} className='block-link group-hover:underline'>
                             {title}
                         </Link>
-                    </Subtitle>
+                    </Title>
 
                     <Text textSize={EnumText.large} className='sm:line-clamp-3'>
                         {summary}

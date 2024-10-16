@@ -7,8 +7,8 @@ import { EnumLogo } from './Logo';
 import { EnumPopularNews } from './PopularNews';
 import { EnumSocials } from './Socials';
 import { EnumSubscribe } from './Subscribe';
-import { EnumSubtitle } from './Subtitle';
 import { EnumText } from './Text';
+import { EnumTitle } from './Title';
 
 export {
     EnumAuthorInfo,
@@ -20,6 +20,6 @@ export {
     EnumPopularNews,
     EnumSocials,
     EnumSubscribe,
-    EnumSubtitle,
     EnumText,
+    EnumTitle,
 };

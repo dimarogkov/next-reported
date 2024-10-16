@@ -1,6 +1,6 @@
-import { EnumSubtitle } from '@/src/types/enums';
+import { EnumTitle } from '@/src/types/enums';
 import { IContactInfo } from '@/src/types/interfaces/ContactInfo';
-import { Subtitle, Text } from '../ui';
+import { Text, Title } from '../ui';
 
 type Props = {
     info: IContactInfo;
@@ -16,9 +16,9 @@ const ContactInfoCard: React.FC<Props> = ({ info }) => {
             </div>
 
             <div className='w-full'>
-                <Subtitle subType={EnumSubtitle.h3} className='text-red mb-1 md:mb-2 last:mb-0'>
+                <Title titleType={EnumTitle.h3} className='text-red mb-1 md:mb-2 last:mb-0'>
                     {title}
-                </Subtitle>
+                </Title>
 
                 <Text className='w-full lg:max-w-[80%] m-auto'>
                     {textArr.map(({ id, hrefPart, text, isLink }) =>

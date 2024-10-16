@@ -1,8 +1,8 @@
 import { getNewsByCategory } from '@/src/services/news';
-import { EnumBtn, EnumCard, EnumPopularNews } from '@/src/types/enums';
+import { EnumBtn, EnumCard, EnumPopularNews, EnumTitle } from '@/src/types/enums';
 
 import { NewsCard } from '../elements/NewsCard';
-import { BtnLink, Subtitle } from '../ui';
+import { BtnLink, Title } from '../ui';
 import cn from 'classnames';
 
 type Props = {
@@ -20,7 +20,9 @@ const PopularNews: React.FC<Props> = async ({ title, category, type = EnumPopula
         <section className={`relative w-full ${className}`}>
             {title && (
                 <div className='flex items-center justify-between w-full pb-2 sm:pb-3 border-b-2 border-black mb-4 sm:mb-5 lg:mb-6 last:mb-0'>
-                    <Subtitle className='block sm:max-w-[60%]'>{title}</Subtitle>
+                    <Title titleType={EnumTitle.h2} className='block sm:max-w-[60%]'>
+                        {title}
+                    </Title>
 
                     <BtnLink href={`/${category}`} btnType={EnumBtn.darkWithIcon} className='hidden sm:flex'>
                         Go to {title}

@@ -1,5 +1,5 @@
-import { EnumBtn, EnumSocials, EnumSubtitle } from '@/src/types/enums';
-import { BtnLink, Subtitle, Text } from '../ui';
+import { EnumBtn, EnumSocials, EnumTitle } from '@/src/types/enums';
+import { BtnLink, Text, Title } from '../ui';
 import { Socials } from '../elements';
 
 type Props = {
@@ -12,9 +12,9 @@ const CtyBanner: React.FC<Props> = ({ className = '' }) => {
             className={`relative flex items-center w-full p-5 md:p-10 rounded-md overflow-hidden bg-red ${className}`}
         >
             <div className='w-full'>
-                <Subtitle subType={EnumSubtitle.h3} className='text-white mb-3 last:mb-0'>
+                <Title titleType={EnumTitle.h3} className='text-white mb-3 last:mb-0'>
                     Imagine your ad hear
-                </Subtitle>
+                </Title>
 
                 <div className='flex flex-col-reverse lg:flex-row gap-5 lg:gap-10 w-full'>
                     <div className='w-full'>

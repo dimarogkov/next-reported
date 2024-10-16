@@ -6,8 +6,7 @@ import ErrorMessage from './ErrorMessage';
 import Input from './Input';
 import Label from './Label';
 import Skeleton from './Skeleton';
-import Subtitle from './Subtitle';
 import Text from './Text';
 import Title from './Title';
 
-export { Area, Badge, Btn, BtnLink, ErrorMessage, Input, Label, Skeleton, Subtitle, Text, Title };
+export { Area, Badge, Btn, BtnLink, ErrorMessage, Input, Label, Skeleton, Text, Title };

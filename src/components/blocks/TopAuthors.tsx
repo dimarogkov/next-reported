@@ -1,8 +1,8 @@
 import { getTopAuthors } from '@/src/services/authors';
-import { EnumBtn } from '@/src/types/enums';
+import { EnumBtn, EnumTitle } from '@/src/types/enums';
 
 import { AuthorCard } from '../elements/Author';
-import { BtnLink, Subtitle } from '../ui';
+import { BtnLink, Title } from '../ui';
 
 type Props = {
     className?: string;
@@ -14,7 +14,9 @@ const TopAuthors: React.FC<Props> = async ({ className = '' }) => {
     return (
         <section className={`relative w-full ${className}`}>
             <div className='flex items-center justify-between w-full pb-2 sm:pb-3 border-b-2 border-black mb-10 last:mb-0'>
-                <Subtitle className='block sm:max-w-[60%]'>Top Authors</Subtitle>
+                <Title titleType={EnumTitle.h2} className='block sm:max-w-[60%]'>
+                    Top Authors
+                </Title>
 
                 <BtnLink href={`/authors`} btnType={EnumBtn.darkWithIcon} className='hidden sm:flex'>
                     Go to Authors

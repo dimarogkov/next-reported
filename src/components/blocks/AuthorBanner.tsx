@@ -1,8 +1,8 @@
 import { IAuthor } from '@/src/types/interfaces/Author';
-import { EnumAuthorInfo } from '@/src/types/enums';
+import { EnumAuthorInfo, EnumTitle } from '@/src/types/enums';
 
 import { AuthorAvatar } from '../elements/Author';
-import { Subtitle, Text, Title } from '../ui';
+import { Text, Title } from '../ui';
 
 type Props = {
     author: IAuthor;
@@ -18,7 +18,9 @@ const AuthorBanner: React.FC<Props> = ({ author, className = '' }) => {
         >
             <AuthorAvatar type={EnumAuthorInfo.dark} author={name} className='pointer-events-none mb-5 last:mb-0' />
 
-            <Subtitle className='mb-3 last:mb-0'>{name}</Subtitle>
+            <Title titleType={EnumTitle.h3} className='mb-3 last:mb-0'>
+                {name}
+            </Title>
 
             <div className='flex flex-col gap-2 w-full'>
                 <Text>

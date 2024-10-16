@@ -1,10 +1,10 @@
 import { capitalizeFirstLetter } from '@/src/helpers';
 import { getNewsByCategory } from '@/src/services/news';
-import { EnumSubscribe, EnumSubtitle } from '@/src/types/enums';
+import { EnumSubscribe, EnumTitle } from '@/src/types/enums';
 
 import { CategoryList, CategoryNewsList } from '../elements';
 import Subscribe from './Subscribe';
-import { Subtitle, Title } from '../ui';
+import { Title } from '../ui';
 
 type Props = {
     category: string;
@@ -25,9 +25,9 @@ const CategoryNews: React.FC<Props> = async ({ category, className = '' }) => {
                 <CategoryNewsList newsArr={newsArr} className='mb-10 sm:mb-12 lg:mb-0 last:mb-0' />
 
                 <div className='sm:sticky sm:top-24 lg:top-28 w-full lg:w-[30%] xl:w-[25%]'>
-                    <Subtitle subType={EnumSubtitle.h3} className='mb-6 last:mb-0'>
+                    <Title titleType={EnumTitle.h3} className='mb-6 last:mb-0'>
                         Explore by Categories
-                    </Subtitle>
+                    </Title>
 
                     <CategoryList className='mb-8 last:mb-0' />
                     <Subscribe type={EnumSubscribe.small} />
