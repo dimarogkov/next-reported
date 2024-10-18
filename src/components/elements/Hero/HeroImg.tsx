@@ -20,8 +20,10 @@ const HeroImg: React.FC<Props> = ({ src, alt }) => {
                 <Image
                     src={src}
                     alt={alt}
-                    fill
                     className='absolute top-0 left-0 w-full h-full object-cover object-center'
+                    sizes='100%'
+                    priority
+                    fill
                 />
             </div>
         </Suspense>

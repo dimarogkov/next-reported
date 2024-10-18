@@ -1,12 +1,21 @@
+'use client';
+import { useEffect, useState } from 'react';
 import { useHeader } from '@/src/store/header';
-import { EnumBtn, EnumTitle } from '@/src/types/enums';
+import { EnumSubmittedInfo, EnumSubscribe, EnumTitle } from '@/src/types/enums';
 
-import { Btn, Input, Label, Text, Title } from '../../ui';
-import { Mail, X } from 'lucide-react';
+import SubscribeForm from '../Subscribe/SubscribeForm';
+import SubmittedInfo from '../SubmittedInfo';
+import { Text, Title } from '../../ui';
+import { X } from 'lucide-react';
 import cn from 'classnames';
 
 const HeaderSubscribe = () => {
+    const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const { isSubscribeOpen, closeMenu } = useHeader((state) => state);
+
+    useEffect(() => {
+        !isSubscribeOpen && setIsFormSubmitted(false);
+    }, [isSubscribeOpen]);
 
     return (
         <div
@@ -26,24 +35,23 @@ const HeaderSubscribe = () => {
                 <X className='w-7 h-7' />
             </button>
 
-            <div className='w-full mb-5 last:mb-0'>
-                <Title titleType={EnumTitle.h3} className='text-red mb-1 sm:mb-2 last:mb-0'>
-                    Subscribe Our Newsletter
-                </Title>
+            {!isFormSubmitted ? (
+                <>
+                    <div className='w-full mb-5 last:mb-0'>
+                        <Title titleType={EnumTitle.h3} className='mb-1 sm:mb-2 last:mb-0'>
+                            Subscribe Our Newsletter
+                        </Title>
 
-                <Text>Stay updated with the latest news and exclusive content by subscribing to our newsletter.</Text>
-            </div>
+                        <Text>
+                            Stay updated with the latest news and exclusive content by subscribing to our newsletter.
+                        </Text>
+                    </div>
 
-            <form className={'flex flex-col gap-3 w-full sm:flex-row sm:gap-2'}>
-                <Label className='flex items-center w-full'>
-                    <Mail className='absolute z-10 left-2 w-5 lg:w-6 h-5 lg:h-6 stroke-1 text-black/50' />
-                    <Input name='email' placeholder='Enter your email' className='pl-9 lg:pl-10' />
-                </Label>
-
-                <Btn type='submit' btnType={EnumBtn.darkWithIcon}>
-                    Subscribe
-                </Btn>
-            </form>
+                    <SubscribeForm type={EnumSubscribe.full} setIsFormSubmitted={setIsFormSubmitted} />
+                </>
+            ) : (
+                <SubmittedInfo />
+            )}
         </div>
     );
 };

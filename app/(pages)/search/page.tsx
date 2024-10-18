@@ -9,7 +9,9 @@ export const metadata: Metadata = {
 const SearchPage = () => {
     return (
         <>
-            <Breadcrumbs className='my-6 xl:my-8' />
+            <Suspense>
+                <Breadcrumbs className='my-6 xl:my-8' />
+            </Suspense>
 
             <Suspense>
                 <Search className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />

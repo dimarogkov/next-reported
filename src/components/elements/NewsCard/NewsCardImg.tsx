@@ -24,6 +24,8 @@ const NewsCardImg: React.FC<Props> = ({ type, src, alt }) => {
                 src={src}
                 alt={alt}
                 className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-all duration-500 group-hover:scale-110 group-hover:brightness-75'
+                sizes='100%'
+                priority
                 fill
             />
         </div>

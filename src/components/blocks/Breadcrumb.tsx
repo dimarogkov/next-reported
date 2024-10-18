@@ -1,10 +1,12 @@
 'use client';
+import React from 'react';
 import Link from 'next/link';
 import { capitalizeFirstLetter, getFixedName } from '@/src/helpers';
 import { usePathname } from 'next/navigation';
 
 import { Text } from '../ui';
 import { ChevronRight } from 'lucide-react';
+import { useMemo } from 'react';
 
 type Props = {
     className?: string;
@@ -22,33 +24,28 @@ const Breadcrumbs: React.FC<Props> = ({ className = '' }) => {
             text: capitalizeFirstLetter(getFixedName(path)),
         }));
 
+    const breadcrumbs = useMemo(
+        () => [{ id: crypto.randomUUID(), href: '/', text: 'Home' }, ...pathNames],
+        [pathNames]
+    );
+
     return (
         <section className={`relative hidden sm:block w-full ${className}`}>
             <ul className='flex items-center gap-1 w-full'>
-                <li>
-                    <Link href='/' className='hover:underline'>
-                        Home
-                    </Link>
-                </li>
+                {breadcrumbs.map(({ id, href, text }, index) => (
+                    <React.Fragment key={id}>
+                        <li>
+                            {breadcrumbs.length - 1 !== index ? (
+                                <Link href={href} className='flex items-center line-clamp-1 hover:underline'>
+                                    <span>{text}</span>
 
-                <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />
-
-                {pathNames.map(({ id, href, text }, index) => (
-                    <>
-                        <li key={id}>
-                            {pathNames.length - 1 !== index ? (
-                                <Link href={href} className='line-clamp-1 hover:underline'>
-                                    {text}
+                                    <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />
                                 </Link>
                             ) : (
                                 <Text className='line-clamp-1 text-red'>{text}</Text>
                             )}
                         </li>
-
-                        {pathNames.length - 1 !== index && (
-                            <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />
-                        )}
-                    </>
+                    </React.Fragment>
                 ))}
             </ul>
         </section>

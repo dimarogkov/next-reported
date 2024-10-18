@@ -23,6 +23,5 @@ export const contactFormOptions = {
         lastName: '',
         email: '',
         phone: '',
-        area: '',
     },
 };

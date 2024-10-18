@@ -1,5 +1,5 @@
 import { contactInfo } from '@/src/variables/contact-info';
-import { ContactInfoCard } from '../elements';
+import { ContactInfoCard } from '../elements/Contact';
 
 type Props = {
     className?: string;

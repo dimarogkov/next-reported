@@ -1,13 +1,11 @@
+import { InputHTMLAttributes, RefAttributes, forwardRef } from 'react';
 import { UseFormRegister } from 'react-hook-form';
 import { EnumContactForm } from '@/src/types/enums';
-import { IContactForm } from '@/src/types/interfaces/ContactForm';
-
-import { InputHTMLAttributes, RefAttributes, forwardRef } from 'react';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement>, RefAttributes<HTMLInputElement> {
     className?: string;
-    registerName?: EnumContactForm;
-    register?: UseFormRegister<IContactForm>;
+    registerName?: EnumContactForm | 'email';
+    register?: UseFormRegister<any>;
 }
 
 const Input: React.FC<Props> = forwardRef<HTMLInputElement, Props>(

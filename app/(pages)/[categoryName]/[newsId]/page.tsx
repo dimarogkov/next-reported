@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { capitalizeFirstLetter } from '@/src/helpers';
 import { getNewsById } from '@/src/services/news';
@@ -30,7 +31,9 @@ const NewsDetailPage: React.FC<Props> = async ({ params }) => {
 
     return (
         <>
-            <Breadcrumbs className='my-6 xl:my-8' />
+            <Suspense>
+                <Breadcrumbs className='my-6 xl:my-8' />
+            </Suspense>
 
             <NewsDetail news={news} className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24 mt-8 sm:mt-0' />
 

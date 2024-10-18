@@ -1,6 +1,7 @@
+import React from 'react';
 import { EnumTitle } from '@/src/types/enums';
 import { IContactInfo } from '@/src/types/interfaces/ContactInfo';
-import { Text, Title } from '../ui';
+import { Text, Title } from '../../ui';
 
 type Props = {
     info: IContactInfo;
@@ -23,16 +24,16 @@ const ContactInfoCard: React.FC<Props> = ({ info }) => {
                 <Text className='w-full lg:max-w-[80%] m-auto'>
                     {textArr.map(({ id, hrefPart, text, isLink }) =>
                         isLink ? (
-                            <p key={id}>
+                            <React.Fragment key={id}>
                                 <a
                                     href={`${hrefPart}:${text}`}
                                     className='transition-opacity duration-300 hover:opacity-75'
                                 >
                                     {text}
                                 </a>
-                            </p>
+                            </React.Fragment>
                         ) : (
-                            <p key={id}>{text}</p>
+                            <React.Fragment key={id}>{text}</React.Fragment>
                         )
                     )}
                 </Text>

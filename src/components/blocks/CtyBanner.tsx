@@ -18,7 +18,7 @@ const CtyBanner: React.FC<Props> = ({ className = '' }) => {
 
                 <div className='flex flex-col-reverse lg:flex-row gap-5 lg:gap-10 w-full'>
                     <div className='w-full'>
-                        <Text className='text-white mb-5 last:mb-0'>
+                        <Text className='text-white/90 mb-5 last:mb-0'>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, assumenda vel rem
                             voluptas, dignissimos animi voluptate repudiandae neque impedit obcaecati amet recusandae
                             expedita itaque rerum nulla nobis dolores eos dicta?
@@ -30,7 +30,7 @@ const CtyBanner: React.FC<Props> = ({ className = '' }) => {
                     </div>
 
                     <div className='w-full'>
-                        <Text className='text-white mb-5 last:mb-0'>
+                        <Text className='text-white/90 mb-5 last:mb-0'>
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis, assumenda vel rem
                             voluptas, dignissimos animi voluptate repudiandae neque impedit obcaecati amet
                         </Text>

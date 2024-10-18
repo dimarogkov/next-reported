@@ -13,7 +13,7 @@ const Title: React.FC<Props> = forwardRef<HTMLHeadingElement, Props>(
                 <h1
                     ref={ref}
                     {...props}
-                    className={`relative w-full font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl ${className}`}
+                    className={`w-full font-semibold text-3xl md:text-4xl lg:text-5xl xl:text-6xl ${className}`}
                 />
             )}
 
@@ -21,12 +21,12 @@ const Title: React.FC<Props> = forwardRef<HTMLHeadingElement, Props>(
                 <h2
                     ref={ref}
                     {...props}
-                    className={`relative w-full font-semibold text-2xl sm:text-3xl lg:text-4xl ${className}`}
+                    className={`w-full font-semibold text-2xl sm:text-3xl lg:text-4xl ${className}`}
                 />
             )}
 
             {titleType === EnumTitle.h3 && (
-                <h3 ref={ref} {...props} className={`relative w-full font-semibold text-2xl ${className}`} />
+                <h3 ref={ref} {...props} className={`w-full font-semibold text-2xl ${className}`} />
             )}
         </>
     )

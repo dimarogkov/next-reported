@@ -1,4 +1,5 @@
 'use client';
+import { Dispatch, SetStateAction, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { contactFormOptions } from '@/src/helpers';
 import { EnumBtn, EnumContactForm } from '@/src/types/enums';
@@ -6,14 +7,26 @@ import { IContactForm } from '@/src/types/interfaces/ContactForm';
 
 import { Area, Btn, ErrorMessage, Input, Label } from '../ui';
 
-const GetInTouchForm = () => {
+type Props = {
+    setIsFormSubmitted: Dispatch<SetStateAction<boolean>>;
+};
+
+const GetInTouchForm: React.FC<Props> = ({ setIsFormSubmitted }) => {
     const {
         register,
+        reset,
         handleSubmit,
         formState: { errors },
     } = useForm(contactFormOptions);
 
-    const onSubmit = (data: IContactForm) => console.log(data);
+    useEffect(() => {
+        return () => reset();
+    }, [reset]);
+
+    const onSubmit = (data: IContactForm) => {
+        setIsFormSubmitted(true);
+        console.log(data);
+    };
 
     return (
         <form className='w-full' onSubmit={handleSubmit(onSubmit)}>

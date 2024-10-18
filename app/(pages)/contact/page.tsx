@@ -1,3 +1,4 @@
+import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { Banner, Breadcrumbs, ContactForm, ContactInfo, Subscribe } from '@/src/components/blocks';
 
@@ -8,7 +9,9 @@ export const metadata: Metadata = {
 const ContactPage = () => {
     return (
         <>
-            <Breadcrumbs className='my-6 xl:my-8' />
+            <Suspense>
+                <Breadcrumbs className='my-6 xl:my-8' />
+            </Suspense>
 
             <Banner
                 title='Contact Us'
