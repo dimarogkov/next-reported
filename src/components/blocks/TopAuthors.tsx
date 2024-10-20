@@ -1,10 +1,10 @@
+import { Suspense } from 'react';
 import { getTopAuthors } from '@/src/services/authors';
 import { EnumBtn, EnumTitle } from '@/src/types/enums';
 import { PATHS } from '@/src/variables/paths';
 
 import { AuthorCard } from '../elements/Author';
 import { BtnLink, Title } from '../ui';
-import { Suspense } from 'react';
 
 type Props = {
     className?: string;
