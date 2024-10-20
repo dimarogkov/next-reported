@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { EnumBtn } from '@/src/types/enums';
+import { PATHS } from '@/src/variables/paths';
 import { BtnLink, Title } from '@/src/components/ui';
 
 export const metadata: Metadata = {
@@ -11,7 +12,7 @@ const NotFoundPage = () => {
         <section className='relative w-full'>
             <Title className='mb-5 last:mb-0'>Page not Found | 404</Title>
 
-            <BtnLink href='/' btnType={EnumBtn.withIcon}>
+            <BtnLink href={PATHS.HOME} btnType={EnumBtn.withIcon}>
                 Go Home
             </BtnLink>
         </section>

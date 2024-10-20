@@ -3,8 +3,8 @@ import { Dispatch, SetStateAction, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { contactFormOptions } from '@/src/helpers';
 import { EnumBtn, EnumContactForm } from '@/src/types/enums';
-import { IContactForm } from '@/src/types/interfaces/ContactForm';
 
+import { IContactForm } from '@/src/types/interfaces/ContactForm';
 import { Area, Btn, ErrorMessage, Input, Label } from '../ui';
 
 type Props = {

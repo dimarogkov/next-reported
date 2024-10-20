@@ -1,13 +1,13 @@
 import Link from 'next/link';
 import { EnumLogo, EnumSocials } from '@/src/types/enums';
-import { menu } from '@/src/variables/menu';
+import { MENU } from '@/src/variables/menu';
 
 import Logo from '../Logo';
 import Socials from '../Socials';
 import { Text } from '../../ui';
 
 const FooterTop = () => {
-    const { deskMenu, burgerMenu } = menu;
+    const { deskMenu, burgerMenu } = MENU;
 
     return (
         <div className='w-full px-4 sm:px-5 py-8 sm:py-10 md:py-12 xl:py-16'>

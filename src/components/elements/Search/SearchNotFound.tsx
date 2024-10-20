@@ -1,5 +1,6 @@
 import { useHeader } from '@/src/store/header';
 import { EnumBtn, EnumText, EnumTitle } from '@/src/types/enums';
+import { PATHS } from '@/src/variables/paths';
 import { Btn, BtnLink, Text, Title } from '../../ui';
 
 const SearchNotFound = () => {
@@ -28,7 +29,7 @@ const SearchNotFound = () => {
                     or
                 </Text>
 
-                <BtnLink href='/' btnType={EnumBtn.withIcon}>
+                <BtnLink href={PATHS.HOME} btnType={EnumBtn.withIcon}>
                     Back Home
                 </BtnLink>
             </div>

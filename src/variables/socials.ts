@@ -1,7 +1,7 @@
 import { Twitter, Facebook, Youtube, Instagram } from 'lucide-react';
 import { ISocial } from '../types/interfaces/Social';
 
-export const socials: ISocial[] = [
+export const SOCIALS: ISocial[] = [
     {
         id: 0,
         href: 'https://www.google.com/',

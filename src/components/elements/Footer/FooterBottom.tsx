@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { DEVELOPER_NAME, PROJECT_NAME } from '@/src/variables';
 import { EnumText } from '@/src/types/enums';
+import { PATHS } from '@/src/variables/paths';
 import { Text } from '../../ui';
 
 const FooterBottom = () => {
@@ -9,7 +10,7 @@ const FooterBottom = () => {
             <div className='flex flex-wrap justify-between w-full text-center md:text-left max-w-screen-2xl m-auto'>
                 <Text textSize={EnumText.small} className='w-full md:w-auto mb-2.5 md:mb-0 last:mb-0'>
                     <span>Design by </span>
-                    <Link href='/' className='underline'>
+                    <Link href={PATHS.HOME} className='underline'>
                         {PROJECT_NAME}
                     </Link>
                     <span>. Powered by </span>

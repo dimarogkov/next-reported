@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { EnumSocials } from '@/src/types/enums';
-import { socials } from '@/src/variables/socials';
+import { SOCIALS } from '@/src/variables/socials';
 import cn from 'classnames';
 
 type Props = {
@@ -9,6 +9,8 @@ type Props = {
 };
 
 const Socials: React.FC<Props> = ({ type = EnumSocials.default, className = '' }) => {
+    const socials = SOCIALS;
+
     return (
         <div className={`relative flex gap-4 w-full ${className}`}>
             {socials.map(({ id, href, icon: SocialIcon }) => (

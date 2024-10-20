@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { EnumSubmittedInfo, EnumSubscribe, EnumTitle } from '@/src/types/enums';
+import { EnumTitle } from '@/src/types/enums';
 
 import GetInTouchForm from '../GetInTouchForm';
 import { Text, Title } from '../../ui';

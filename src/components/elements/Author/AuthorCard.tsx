@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { EnumAuthorInfo, EnumText } from '@/src/types/enums';
 import { IAuthor } from '@/src/types/interfaces/Author';
+import { PATHS } from '@/src/variables/paths';
 
 import { AuthorAvatar } from '.';
 import { Text } from '../../ui';
@@ -20,7 +21,7 @@ const AuthorCard: React.FC<Props> = ({ author }) => {
 
             <div className='w-full text-center'>
                 <Text textSize={EnumText.large} className='text-red line-clamp-1 hover:underline'>
-                    <Link href={`/authors/${name}`}>{name}</Link>
+                    <Link href={`${PATHS.AUTHORS}/${name}`}>{name}</Link>
                 </Text>
 
                 <Text textSize={EnumText.small} className='line-clamp-1'>

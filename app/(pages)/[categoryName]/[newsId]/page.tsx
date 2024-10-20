@@ -1,7 +1,7 @@
 import { Metadata } from 'next';
 import { capitalizeFirstLetter } from '@/src/helpers';
 import { getNewsById } from '@/src/services/news';
-import { menu } from '@/src/variables/menu';
+import { MENU } from '@/src/variables/menu';
 
 import { Breadcrumbs, Categories, NewsCol, NewsDetail, NewsRow, Subscribe, TopAuthors } from '@/src/components/blocks';
 
@@ -21,7 +21,7 @@ export const generateMetadata = async ({ params }: Props): Promise<Metadata> => 
 
 const NewsDetailPage: React.FC<Props> = async ({ params }) => {
     const news = await getNewsById(params.newsId);
-    const { deskMenu } = menu;
+    const { deskMenu } = MENU;
 
     const categories = deskMenu
         .map(({ name }) => name.toLowerCase())

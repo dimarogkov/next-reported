@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { EnumLogo } from '@/src/types/enums';
 import { PROJECT_NAME } from '@/src/variables';
+import { PATHS } from '@/src/variables/paths';
+
 import { Newspaper } from 'lucide-react';
 import cn from 'classnames';
 
@@ -12,7 +14,7 @@ type Props = {
 const Logo: React.FC<Props> = ({ type = EnumLogo.default, className = '' }) => {
     return (
         <Link
-            href='/'
+            href={PATHS.HOME}
             className={`flex items-center gap-2 transition-opacity duration-300 hover:opacity-75 ${className}`}
         >
             <Newspaper

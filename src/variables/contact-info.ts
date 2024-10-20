@@ -1,7 +1,7 @@
 import { IContactInfo } from '../types/interfaces/ContactInfo';
 import { MailPlus, MapPinned, PhoneCall } from 'lucide-react';
 
-export const contactInfo: IContactInfo[] = [
+export const CONTACT_INFO: IContactInfo[] = [
     {
         id: 0,
         title: 'Visit Our Office',

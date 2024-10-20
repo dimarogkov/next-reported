@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import AuthorAvatar from './AuthorAvatar';
 import { EnumAuthorInfo, EnumText } from '@/src/types/enums';
+import { PATHS } from '@/src/variables/paths';
 
 import { Text } from '../../ui';
 import cn from 'classnames';
@@ -49,7 +50,7 @@ const AuthorInfo: React.FC<Props> = ({ type = EnumAuthorInfo.dark, authors }) =>
                     index !== authors.length - 1 ? (
                         <span key={author}>
                             <Link
-                                href={`/authors/${author}`}
+                                href={`${PATHS.AUTHORS}/${author}`}
                                 className={cn('hover:underline', {
                                     'text-red ': type === EnumAuthorInfo.dark,
                                     'text-gray ': type === EnumAuthorInfo.light,
@@ -62,7 +63,7 @@ const AuthorInfo: React.FC<Props> = ({ type = EnumAuthorInfo.dark, authors }) =>
                     ) : (
                         <span key={author}>
                             <Link
-                                href={`/authors/${author}`}
+                                href={`${PATHS.AUTHORS}/${author}`}
                                 className={cn('hover:underline', {
                                     'text-red ': type === EnumAuthorInfo.dark,
                                     'text-gray ': type === EnumAuthorInfo.light,

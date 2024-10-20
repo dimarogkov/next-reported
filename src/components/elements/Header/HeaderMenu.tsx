@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { menu } from '@/src/variables/menu';
+import { MENU } from '@/src/variables/menu';
 import cn from 'classnames';
 
 type Props = {
@@ -7,7 +7,7 @@ type Props = {
 };
 
 const HeaderMenu: React.FC<Props> = ({ pathname }) => {
-    const { deskMenu } = menu;
+    const { deskMenu } = MENU;
 
     return (
         <ul className='hidden lg:flex gap-6 xl:gap-10'>

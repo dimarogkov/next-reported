@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { useQuery } from '@tanstack/react-query';
 import { getAvatar } from '@/src/services/avatar';
 import { EnumAuthorInfo } from '@/src/types/enums';
+import { PATHS } from '@/src/variables/paths';
 
 import { Skeleton } from '../../ui';
 import cn from 'classnames';
@@ -33,7 +34,7 @@ const AuthorAvatar: React.FC<Props> = ({ type, author, className = '' }) => {
 
                 {avatar && (
                     <Link
-                        href={`/authors/${author}`}
+                        href={`${PATHS.AUTHORS}/${author}`}
                         dangerouslySetInnerHTML={{ __html: avatar }}
                         className='absolute top-0 left-0 w-full h-full object-cover object-center will-change-transform transition-all duration-300 hover:scale-110 hover:brightness-90'
                     />

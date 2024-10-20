@@ -1,7 +1,7 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { menu } from '@/src/variables/menu';
+import { MENU } from '@/src/variables/menu';
 import cn from 'classnames';
 
 type Props = {
@@ -10,7 +10,7 @@ type Props = {
 
 const CategoryList: React.FC<Props> = ({ className = '' }) => {
     const pathname = usePathname();
-    const { deskMenu } = menu;
+    const { deskMenu } = MENU;
 
     return (
         <ul className={`relative w-full ${className}`}>

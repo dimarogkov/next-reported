@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useHeader } from '@/src/store/header';
-import { menu } from '@/src/variables/menu';
 import { EnumBtn } from '@/src/types/enums';
+import { MENU } from '@/src/variables/menu';
 
 import Logo from '../Logo';
 import Socials from '../Socials';
@@ -16,7 +16,7 @@ type Props = {
 
 const HeaderDrawer: React.FC<Props> = ({ pathname }) => {
     const { isMenuOpen, isSubscribeOpen, setIsMenuOpen, setIsSubscribeOpen, closeMenu } = useHeader((state) => state);
-    const { deskMenu, burgerMenu } = menu;
+    const { deskMenu, burgerMenu } = MENU;
 
     useEffect(() => {
         setIsMenuOpen(false);

@@ -1,5 +1,6 @@
 import { getTopAuthors } from '@/src/services/authors';
 import { EnumBtn, EnumTitle } from '@/src/types/enums';
+import { PATHS } from '@/src/variables/paths';
 
 import { AuthorCard } from '../elements/Author';
 import { BtnLink, Title } from '../ui';
@@ -20,7 +21,7 @@ const TopAuthors: React.FC<Props> = async ({ className = '' }) => {
                         Top Authors
                     </Title>
 
-                    <BtnLink href={`/authors`} btnType={EnumBtn.darkWithIcon} className='hidden sm:flex'>
+                    <BtnLink href={PATHS.AUTHORS} btnType={EnumBtn.darkWithIcon} className='hidden sm:flex'>
                         Go to Authors
                     </BtnLink>
                 </div>

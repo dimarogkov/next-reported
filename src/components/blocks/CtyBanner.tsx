@@ -1,4 +1,5 @@
 import { EnumBtn, EnumSocials, EnumTitle } from '@/src/types/enums';
+import { PATHS } from '@/src/variables/paths';
 import { BtnLink, Text, Title } from '../ui';
 import { Socials } from '../elements';
 
@@ -24,7 +25,7 @@ const CtyBanner: React.FC<Props> = ({ className = '' }) => {
                             expedita itaque rerum nulla nobis dolores eos dicta?
                         </Text>
 
-                        <BtnLink href='/about-us' btnType={EnumBtn.darkWithIcon}>
+                        <BtnLink href={PATHS.ABOUT_US} btnType={EnumBtn.darkWithIcon}>
                             About Us
                         </BtnLink>
                     </div>

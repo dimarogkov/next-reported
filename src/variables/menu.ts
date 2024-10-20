@@ -1,41 +1,42 @@
 import { BriefcaseBusiness, Hospital, Landmark, Microscope, Trophy, Tv } from 'lucide-react';
 import { IMenu } from '../types/interfaces/MenuItem';
+import { PATHS } from './paths';
 
-export const menu: IMenu = {
+export const MENU: IMenu = {
     deskMenu: [
         {
             id: 0,
-            href: '/sports',
+            href: PATHS.SPORTS,
             name: 'Sports',
             icon: Trophy,
         },
         {
             id: 1,
-            href: '/politics',
+            href: PATHS.POLITICS,
             name: 'Politics',
             icon: Landmark,
         },
         {
             id: 2,
-            href: '/entertainment',
+            href: PATHS.ENTERTAINMENT,
             name: 'Entertainment',
             icon: Tv,
         },
         {
             id: 3,
-            href: '/business',
+            href: PATHS.BUSINESS,
             name: 'Business',
             icon: BriefcaseBusiness,
         },
         {
             id: 4,
-            href: '/health',
+            href: PATHS.HEALTH,
             name: 'Health',
             icon: Hospital,
         },
         {
             id: 5,
-            href: '/science',
+            href: PATHS.SCIENCE,
             name: 'Science',
             icon: Microscope,
         },
@@ -43,17 +44,17 @@ export const menu: IMenu = {
     burgerMenu: [
         {
             id: 0,
-            href: '/about-us',
+            href: PATHS.ABOUT_US,
             name: 'About us',
         },
         {
             id: 1,
-            href: '/authors',
+            href: PATHS.AUTHORS,
             name: 'Authors',
         },
         {
             id: 2,
-            href: '/contact',
+            href: PATHS.CONTACT,
             name: 'Contact',
         },
     ],

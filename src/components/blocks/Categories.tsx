@@ -1,5 +1,5 @@
 import { EnumTitle } from '@/src/types/enums';
-import { menu } from '@/src/variables/menu';
+import { MENU } from '@/src/variables/menu';
 
 import { CategoriesCard } from '../elements';
 import { Title } from '../ui';
@@ -9,7 +9,7 @@ type Props = {
 };
 
 const Categories: React.FC<Props> = ({ className = '' }) => {
-    const { deskMenu } = menu;
+    const { deskMenu } = MENU;
 
     return (
         <section className={`relative w-full ${className}`}>
