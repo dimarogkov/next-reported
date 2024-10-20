@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { Metadata } from 'next';
 import { Breadcrumbs, Categories, Search, Subscribe, TopAuthors } from '@/src/components/blocks';
 
@@ -9,13 +8,9 @@ export const metadata: Metadata = {
 const SearchPage = () => {
     return (
         <>
-            <Suspense>
-                <Breadcrumbs className='my-6 xl:my-8' />
-            </Suspense>
+            <Breadcrumbs className='my-6 xl:my-8' />
 
-            <Suspense>
-                <Search className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
-            </Suspense>
+            <Search className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 
             <Categories className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 

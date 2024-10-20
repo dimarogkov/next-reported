@@ -1,7 +1,7 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useHeader } from '@/src/store/header';
-import { EnumSubmittedInfo, EnumSubscribe, EnumTitle } from '@/src/types/enums';
+import { EnumSubscribe, EnumTitle } from '@/src/types/enums';
 
 import SubscribeForm from '../Subscribe/SubscribeForm';
 import SubmittedInfo from '../SubmittedInfo';
@@ -12,10 +12,6 @@ import cn from 'classnames';
 const HeaderSubscribe = () => {
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const { isSubscribeOpen, closeMenu } = useHeader((state) => state);
-
-    useEffect(() => {
-        !isSubscribeOpen && setIsFormSubmitted(false);
-    }, [isSubscribeOpen]);
 
     return (
         <div

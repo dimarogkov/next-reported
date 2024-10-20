@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Link from 'next/link';
 import { capitalizeFirstLetter, getFixedName } from '@/src/helpers';
 import { usePathname } from 'next/navigation';
@@ -30,25 +30,27 @@ const Breadcrumbs: React.FC<Props> = ({ className = '' }) => {
     );
 
     return (
-        <section className={`relative hidden sm:block w-full ${className}`}>
-            <ul className='flex items-center gap-1 w-full'>
-                {breadcrumbs.map(({ id, href, text }, index) => (
-                    <React.Fragment key={id}>
-                        <li>
-                            {breadcrumbs.length - 1 !== index ? (
-                                <Link href={href} className='flex items-center line-clamp-1 hover:underline'>
-                                    <span>{text}</span>
+        <Suspense>
+            <section className={`relative hidden sm:block w-full ${className}`}>
+                <ul className='flex items-center gap-1 w-full'>
+                    {breadcrumbs.map(({ id, href, text }, index) => (
+                        <React.Fragment key={id}>
+                            <li>
+                                {breadcrumbs.length - 1 !== index ? (
+                                    <Link href={href} className='flex items-center line-clamp-1 hover:underline'>
+                                        <span>{text}</span>
 
-                                    <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />
-                                </Link>
-                            ) : (
-                                <Text className='line-clamp-1 text-red'>{text}</Text>
-                            )}
-                        </li>
-                    </React.Fragment>
-                ))}
-            </ul>
-        </section>
+                                        <ChevronRight className='w-5 min-w-5 h-5 stroke-1 text-black' />
+                                    </Link>
+                                ) : (
+                                    <Text className='line-clamp-1 text-red'>{text}</Text>
+                                )}
+                            </li>
+                        </React.Fragment>
+                    ))}
+                </ul>
+            </section>
+        </Suspense>
     );
 };
 

@@ -1,4 +1,3 @@
-import { Suspense } from 'react';
 import { EnumCategoriesNews, EnumPopularNews } from '@/src/types/enums';
 import {
     Categories,
@@ -26,9 +25,7 @@ const HomePage = () => {
                 <NewsCol title='Science' category={EnumCategoriesNews.science} />
             </NewsRow>
 
-            <Suspense>
-                <TopAuthors className='mb-12 lg:mb-20 xl:mb-28' />
-            </Suspense>
+            <TopAuthors className='mb-12 lg:mb-20 xl:mb-28' />
 
             <Categories className='mb-12 lg:mb-20 xl:mb-28' />
 
