@@ -3,6 +3,7 @@ import { EnumBtn } from './Btn';
 import { EnumCard } from './Card';
 import { EnumCategoriesNews } from './CategoriesNews';
 import { EnumContactForm } from './ContactForm';
+import { EnumContentInfo } from './ContentInfo';
 import { EnumError } from './Error';
 import { EnumLogo } from './Logo';
 import { EnumPopularNews } from './PopularNews';
@@ -18,6 +19,7 @@ export {
     EnumCard,
     EnumCategoriesNews,
     EnumContactForm,
+    EnumContentInfo,
     EnumError,
     EnumLogo,
     EnumPopularNews,

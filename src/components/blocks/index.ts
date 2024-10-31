@@ -7,6 +7,7 @@ import Categories from './Categories';
 import CategoryNews from './CategoryNews';
 import ContactForm from './ContactForm';
 import ContactInfo from './ContactInfo';
+import ContentInfo from './ContentInfo';
 import CtyBanner from './CtyBanner';
 import Footer from './Footer';
 import Header from './Header';
@@ -29,6 +30,7 @@ export {
     CategoryNews,
     ContactForm,
     ContactInfo,
+    ContentInfo,
     CtyBanner,
     Footer,
     Header,
