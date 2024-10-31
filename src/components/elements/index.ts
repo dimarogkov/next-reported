@@ -7,6 +7,7 @@ import Logo from './Logo';
 import NewsColList from './NewsColList';
 import Socials from './Socials';
 import SubmittedInfo from './SubmittedInfo';
+import WhoWeAreCard from './WhoWeAreCard';
 
 export {
     CategoriesCard,
@@ -18,4 +19,5 @@ export {
     NewsColList,
     Socials,
     SubmittedInfo,
+    WhoWeAreCard,
 };

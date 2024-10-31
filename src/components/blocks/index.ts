@@ -19,6 +19,7 @@ import PopularNews from './PopularNews';
 import Search from './Search';
 import Subscribe from './Subscribe';
 import TopAuthors from './TopAuthors';
+import WhoWeAre from './WhoWeAre';
 
 export {
     AuthorBanner,
@@ -42,4 +43,5 @@ export {
     Search,
     Subscribe,
     TopAuthors,
+    WhoWeAre,
 };

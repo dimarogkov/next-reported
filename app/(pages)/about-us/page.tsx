@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import { CONTENT_INFO } from '@/src/variables/content-info';
 import { EnumContentInfo } from '@/src/types/enums';
 
-import { Banner, Breadcrumbs, ContentInfo, TopAuthors } from '@/src/components/blocks';
+import { Banner, Breadcrumbs, Categories, ContentInfo, Subscribe, TopAuthors, WhoWeAre } from '@/src/components/blocks';
 import { ContentInfoText } from '@/src/components/elements/ContentInfo';
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ const AboutUsPage = () => {
                 className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24'
             />
 
-            {/* who we are */}
+            <WhoWeAre className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 
             <ContentInfo
                 type={EnumContentInfo.imgLeft}
@@ -37,7 +37,9 @@ const AboutUsPage = () => {
 
             <TopAuthors className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
 
-            {/* faq's */}
+            <Categories className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
+
+            <Subscribe className='mb-10 sm:mb-12 lg:mb-20 xl:mb-24' />
         </>
     );
 };
