@@ -55,7 +55,6 @@ const GetInTouchForm: React.FC<Props> = ({ setIsFormSubmitted }) => {
 
                 <Label className='w-full'>
                     <Input
-                        type='email'
                         placeholder='Email'
                         register={register}
                         registerName={EnumContactForm.email}

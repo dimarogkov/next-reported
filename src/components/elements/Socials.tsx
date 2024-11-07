@@ -9,11 +9,9 @@ type Props = {
 };
 
 const Socials: React.FC<Props> = ({ type = EnumSocials.default, className = '' }) => {
-    const socials = SOCIALS;
-
     return (
         <div className={`relative flex gap-4 w-full ${className}`}>
-            {socials.map(({ id, href, icon: SocialIcon }) => (
+            {SOCIALS.map(({ id, href, icon: SocialIcon }) => (
                 <Link
                     href={href}
                     className={cn(

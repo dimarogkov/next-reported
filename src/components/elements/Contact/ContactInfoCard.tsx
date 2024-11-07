@@ -24,14 +24,14 @@ const ContactInfoCard: React.FC<Props> = ({ info }) => {
                 <Text className='w-full lg:max-w-[80%] m-auto'>
                     {textArr.map(({ id, hrefPart, text, isLink }) =>
                         isLink ? (
-                            <React.Fragment key={id}>
+                            <span key={id} className='block w-full'>
                                 <a
                                     href={`${hrefPart}:${text}`}
                                     className='transition-opacity duration-300 hover:opacity-75'
                                 >
                                     {text}
                                 </a>
-                            </React.Fragment>
+                            </span>
                         ) : (
                             <React.Fragment key={id}>{text}</React.Fragment>
                         )

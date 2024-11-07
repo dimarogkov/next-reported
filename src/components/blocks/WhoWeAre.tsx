@@ -9,8 +9,6 @@ type Props = {
 };
 
 const WhoWeAre: React.FC<Props> = ({ className = '' }) => {
-    const data = WHO_WE_ARE;
-
     return (
         <section className={`relative w-full ${className}`}>
             <Title
@@ -21,7 +19,7 @@ const WhoWeAre: React.FC<Props> = ({ className = '' }) => {
             </Title>
 
             <div className='grid md:grid-cols-2 gap-6 md:gap-8 lg:gap-10 w-full'>
-                {data.map((item) => (
+                {WHO_WE_ARE.map((item) => (
                     <WhoWeAreCard data={item} key={item.id} />
                 ))}
             </div>

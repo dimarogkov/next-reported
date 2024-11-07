@@ -6,11 +6,9 @@ type Props = {
 };
 
 const ContactInfo: React.FC<Props> = ({ className = '' }) => {
-    const contactInfos = CONTACT_INFO;
-
     return (
         <section className={`relative grid lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-4 xl:gap-5 w-full ${className}`}>
-            {contactInfos.map((info) => (
+            {CONTACT_INFO.map((info) => (
                 <ContactInfoCard info={info} key={info.id} />
             ))}
         </section>
